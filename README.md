@@ -18,6 +18,8 @@
 
 [LinkedIn](https://www.linkedin.com/in/tanner-mitchell/)
 
+#### Reinel Parrado
+
 **_Description_**
 
 ---
@@ -26,13 +28,15 @@ Dvlpr is a social platform for all software developers to come together and netw
 
 **_Planning process_**
 
-## [Trello for daily planning](https://trello.com/b/IrpuHFtR/dvlpr)
+#### [Trello for daily planning](https://trello.com/b/IrpuHFtR/dvlpr)
 
-### Mock up
+---
 
-![SignIn mock up](./readMeImg/signIn.png)
+## Mock up
 
-![Feed mock up](./readMeImg/feed.png)
+![SignIn mock up](/readMeImg/signIn.png)
+
+![Feed mock up](/readMeImg/feed.png)
 
 **_Future updates_**
 
