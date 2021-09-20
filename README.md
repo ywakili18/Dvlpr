@@ -20,6 +20,9 @@
 
 #### Reinel Parrado
 
+[GitHub](https://github.com/UnitarySaucer)
+[LinkedIn](https://www.linkedin.com/in/reinel-parrado/)
+
 **_Description_**
 
 ---
