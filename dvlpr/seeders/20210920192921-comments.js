@@ -11,6 +11,13 @@ module.exports = {
           commentContent: 'this test comment content',
           createdAt: new Date(),
           updatedAt: new Date()
+        },
+        {
+          userId: 2,
+          postId: 2,
+          commentContent: 'this test comment content 2',
+          createdAt: new Date(),
+          updatedAt: new Date()
         }
       ],
       {}

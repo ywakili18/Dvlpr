@@ -10,6 +10,12 @@ module.exports = {
           postContent: 'this is post content',
           createdAt: new Date(),
           updatedAt: new Date()
+        },
+        {
+          userId: 2,
+          postContent: 'this is post content 2',
+          createdAt: new Date(),
+          updatedAt: new Date()
         }
       ],
       {}
