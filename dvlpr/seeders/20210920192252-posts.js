@@ -6,7 +6,7 @@ module.exports = {
       'posts',
       [
         {
-          userId: 1,
+          userId: 3,
           postContent: 'this is post content',
           createdAt: new Date(),
           updatedAt: new Date()

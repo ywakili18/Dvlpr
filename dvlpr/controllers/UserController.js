@@ -11,10 +11,19 @@ const GetProfiles = async (req, res) => {
 
 const GetUserProfile = async (req, res) => {
   try {
-    const userAndPosts = await User.findByPk(req.params.user_id, {
+    const userAndPosts = await User.findByPk(
+      req.params.user_id /*, {
       include: [{ model: Post, as: 'posts' }]
-    })
+    }*/
+    )
     res.send(userAndPosts)
+  } catch (error) {
+    throw error
+  }
+}
+
+const CreateUser = async (req, res) => {
+  try {
   } catch (error) {
     throw error
   }
@@ -22,5 +31,6 @@ const GetUserProfile = async (req, res) => {
 
 module.exports = {
   GetProfiles,
-  GetUserProfile
+  GetUserProfile,
+  CreateUser
 }
