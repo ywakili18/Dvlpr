@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { RegisterUser } from '../services/Auth'
 
 const iState = {
   userName: '',
@@ -16,11 +17,11 @@ export default function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // RegisterUser({
-    //   userName: forValues.userName,
-    //   email: formValues.email,
-    //   password: formValues.password
-    // })
+    RegisterUser({
+      userName: formValues.userName,
+      email: formValues.email,
+      password: formValues.password
+    })
     setFormValues(iState)
   }
   return (
