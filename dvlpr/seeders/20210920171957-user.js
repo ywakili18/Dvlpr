@@ -8,7 +8,7 @@ module.exports = {
         {
           userName: 'testUser1',
           email: 'testUser1@test.com',
-          password: 'testPassword1',
+          passwordDigest: 'testPassword1',
           createdAt: new Date(),
           updatedAt: new Date()
         }
