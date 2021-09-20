@@ -11,6 +11,13 @@ module.exports = {
           passwordDigest: 'testPassword1',
           createdAt: new Date(),
           updatedAt: new Date()
+        },
+        {
+          userName: 'testUser2',
+          email: 'testUser2@test.com',
+          passwordDigest: 'testPassword2',
+          createdAt: new Date(),
+          updatedAt: new Date()
         }
       ],
       {}
