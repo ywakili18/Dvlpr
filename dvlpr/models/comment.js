@@ -30,7 +30,10 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id'
         }
       },
-      commentContent: DataTypes.STRING
+      commentContent: {
+        type: DataTypes.STRING,
+        allowNull: false
+      }
     },
     {
       sequelize,
