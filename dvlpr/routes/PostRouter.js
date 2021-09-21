@@ -3,6 +3,11 @@ const controller = require('../controllers/PostController')
 
 Router.get('/', controller.GetPosts)
 Router.get('/:postId', controller.GetPostsandComments)
+Router.get('/:postId', controller.GetPostById)
 
-Router.post('/createPost', controller.CreateUser)
+Router.put('/:postId', controller.UpdatePostById)
+
+Router.post('/createPost', controller.CreatePost)
+Router.delete('/:postId', controller.DeletePost)
+
 module.exports = Router

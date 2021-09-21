@@ -23,7 +23,7 @@ const GetPostsandComments = async (req, res) => {
     throw error
   }
 }
-const CreateUser = async (req, res) => {
+const CreatePost = async (req, res) => {
   try {
     let postCreator = parseInt(req.params.userId)
     let postBody = {
@@ -36,9 +36,42 @@ const CreateUser = async (req, res) => {
     throw error
   }
 }
+const GetPostById = async (req, res) => {
+  try {
+    let postId = req.params.postId
+    let post = await Post.findByPk(postId)
+    res.send(post)
+  } catch (error) {
+    throw error
+  }
+}
+const UpdatePostById = async (req, res) => {
+  try {
+    let postCreator = req.params.postId
+    let updatedPost = await Post.update(req.body, {
+      where: { id: postCreator },
+      returning: true
+    })
+    res.send(updatedPost)
+  } catch (error) {
+    throw error
+  }
+}
 
+const DeletePost = async (req, res) => {
+  try {
+    let postId = parseInt(req.params.postId)
+    await Post.destroy({ where: { id: postId } })
+    res.send({ message: `Deleted post with an id of ${postId}` })
+  } catch (error) {
+    throw error
+  }
+}
 module.exports = {
   GetPosts,
   GetPostsandComments,
-  CreateUser
+  CreatePost,
+  GetPostById,
+  UpdatePostById,
+  DeletePost
 }
