@@ -14,7 +14,8 @@ module.exports = {
         references: {
           model: 'users',
           key: 'id'
-        }
+        },
+        allowNull: false
       },
       postId: {
         type: Sequelize.INTEGER,
@@ -22,7 +23,8 @@ module.exports = {
         references: {
           model: 'posts',
           key: 'id'
-        }
+        },
+        allowNull: false
       },
       commentContent: {
         type: Sequelize.STRING,
