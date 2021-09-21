@@ -6,8 +6,8 @@ module.exports = {
       'comments',
       [
         {
-          userId: 3,
-          postId: 3,
+          userId: 1,
+          postId: 1,
           commentContent: 'this test comment content',
           createdAt: new Date(),
           updatedAt: new Date()
