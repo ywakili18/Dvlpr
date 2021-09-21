@@ -4,16 +4,8 @@ export default function NavBar(auth, user, logOut) {
   let userOptions
   if (user) {
     userOptions = (
-      <div class="space-x-10 text-right">
-        <NavLink
-          to="/"
-          activeStyle={{
-            fontWeight: 'bold',
-            color: '#8F0DF4'
-          }}
-        >
-          Home
-        </NavLink>
+      <div class="space-x-10 text-right hover:text-purple-regular underline  ">
+        <NavLink to="/">Home</NavLink>
         <NavLink onClick={logOut} to="/login">
           Sign Out
         </NavLink>
@@ -29,7 +21,7 @@ export default function NavBar(auth, user, logOut) {
   )
 
   return (
-    <div class=" bg-gradient-to-b from-coolGray-light w-full h-full p-10">
+    <div class=" bg-gradient-to-b from-coolGray-light w-full h-full p-10 ">
       <NavLink to="/">DVLPR</NavLink>
       {auth && user ? userOptions : publicOptions}
     </div>

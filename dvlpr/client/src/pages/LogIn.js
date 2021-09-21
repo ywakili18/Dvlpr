@@ -32,6 +32,7 @@ export default function SignIn() {
           onChange={handleChange}
           placeholder="User Name"
           required
+          class="border border-coolGray-light px-3 py-2 rounded-lg shadow-sm"
         />
         <input
           name="password"
@@ -39,10 +40,12 @@ export default function SignIn() {
           onChange={handleChange}
           placeholder="Password"
           required
+          class="border border-coolGray-light px-3 py-2 rounded-lg shadow-sm"
         />
         <button
           type="submit"
           disabled={formValues.userName && formValues.password ? false : true}
+          class="bg-purple-regular hover:bg-purple-regular text-coolGray-light font-bold py-3 px-20 rounded-full"
         >
           Log In
         </button>
