@@ -1,9 +1,10 @@
 import { createStore, combineReducers } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import UserReducer from './reducers/UserReducer'
 
 const store = createStore(
   combineReducers({
-    userState: userReducer
+    userState: UserReducer
   }),
   composeWithDevTools()
 )

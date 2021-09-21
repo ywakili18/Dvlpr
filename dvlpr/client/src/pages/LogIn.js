@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapActionsToProps = (dispatch) => {
   return {
-    loginUser: (user) => dispatch(LogInUser(user)),
+    loginUser: (user) => dispatch(LoginUser(user)),
     authUser: (toggle) => dispatch(authenticateUser(toggle))
   }
 }

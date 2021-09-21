@@ -1,11 +1,20 @@
 import { Redirect, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-export default function ProtectedRoute({
+const mapStateToProps = (state) => {
+  return {
+    userState: state.userState
+  }
+}
+
+const mapActionsToProps = (dispatch) => {}
+
+const ProtectedRoute = ({
   user,
   authenticated,
   component: Component,
   ...rest
-}) {
+}) => {
   return (
     <Route
       {...rest}
@@ -19,3 +28,5 @@ export default function ProtectedRoute({
     />
   )
 }
+
+export default connect(mapStateToProps)(ProtectedRoute)

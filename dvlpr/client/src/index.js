@@ -4,11 +4,12 @@ import './styles/index.css'
 import App from './App'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
+import store from './store'
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Provider>
+      <Provider store={store}>
         <App />
       </Provider>
     </BrowserRouter>
