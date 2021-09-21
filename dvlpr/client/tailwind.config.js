@@ -2,7 +2,11 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: 'media', // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        brand: "'Nunito Sans','sans-serif'"
+      }
+    },
     colors: {
       red: {
         dark: '#250404'
@@ -17,7 +21,11 @@ module.exports = {
         light: '#81DCD7'
       },
       purple: {
-        regular: '#9D1EFF'
+        regular: '#9D1EFF',
+        light: '#6267AB'
+      },
+      white: {
+        regular: '#FCFCFC'
       }
     }
   },
