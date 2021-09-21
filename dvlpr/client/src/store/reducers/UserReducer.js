@@ -1,5 +1,4 @@
-import { LOGIN_USER } from '../types'
-import { LoginUser } from '../actions/UserActions'
+import { LOGIN_USER, AUTHENTICATE_TOGGLE } from '../types'
 
 const iState = {
   user: null,
@@ -10,6 +9,10 @@ const UserReducer = (state = iState, action) => {
   switch (action.type) {
     case LOGIN_USER:
       return { ...state, user: action.payload }
+    case AUTHENTICATE_TOGGLE:
+      return { ...state, authenticated: action.payload }
+    default:
+      return { ...state }
   }
 }
 
