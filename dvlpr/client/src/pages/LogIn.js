@@ -24,29 +24,40 @@ export default function SignIn() {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          name="userName"
-          value={formValues.userName}
-          onChange={handleChange}
-          placeholder="User Name"
-          required
-        />
-        <input
-          name="password"
-          value={formValues.password}
-          onChange={handleChange}
-          placeholder="Password"
-          required
-        />
-        <button
-          type="submit"
-          disabled={formValues.userName && formValues.password ? false : true}
-        >
-          Log In
-        </button>
-      </form>
+    <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
+      <div class="bg-coolGray-light py-20 px-5 shadow rounded-lg sm:px-">
+        <h1 class="text-purple-regular text-2xl ">DVLPR</h1>
+        <form onSubmit={handleSubmit} class="mb-0 space-y-5 ">
+          <div>
+            <div class="mt-1">
+              <input
+                name="userName"
+                value={formValues.userName}
+                onChange={handleChange}
+                placeholder="User Name"
+                required
+                class="text-center border border-coolGray-light px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-purple-regular focus:ring-1 focus:ring-purple-regular"
+              />
+            </div>
+          </div>
+
+          <input
+            name="password"
+            value={formValues.password}
+            onChange={handleChange}
+            placeholder="Password"
+            required
+            class="text-center border border-coolGray-light px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-purple-regular focus:ring-1 focus:ring-purple-regular"
+          />
+          <button
+            type="submit"
+            disabled={formValues.userName && formValues.password ? false : true}
+            class="bg-purple-regular hover:bg-purple-regular text-coolGray-light font-bold py-3 px-20 rounded-full"
+          >
+            Log In
+          </button>
+        </form>
+      </div>
     </div>
   )
 }

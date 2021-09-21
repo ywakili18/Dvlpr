@@ -4,7 +4,7 @@ export default function NavBar(auth, user, logOut) {
   let userOptions
   if (user) {
     userOptions = (
-      <div>
+      <div class="space-x-10 text-right hover:text-purple-regular underline  ">
         <NavLink to="/">Home</NavLink>
         <NavLink onClick={logOut} to="/login">
           Sign Out
@@ -21,7 +21,7 @@ export default function NavBar(auth, user, logOut) {
   )
 
   return (
-    <div>
+    <div class=" bg-gradient-to-b from-coolGray-light w-full h-full p-10 ">
       <NavLink to="/">DVLPR</NavLink>
       {auth && user ? userOptions : publicOptions}
     </div>

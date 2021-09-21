@@ -14,7 +14,8 @@ module.exports = {
         references: {
           model: 'users',
           key: 'id'
-        }
+        },
+        allowNull: false
       },
       postContent: {
         type: Sequelize.STRING,
