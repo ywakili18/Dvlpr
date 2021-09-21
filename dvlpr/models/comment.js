@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
         references: {
           model: 'users',
           key: 'id'
-        }
+        },
+        allowNull: false
       },
       postId: {
         type: DataTypes.INTEGER,
@@ -28,7 +29,8 @@ module.exports = (sequelize, DataTypes) => {
         references: {
           model: 'posts',
           key: 'id'
-        }
+        },
+        allowNull: false
       },
       commentContent: {
         type: DataTypes.STRING,
