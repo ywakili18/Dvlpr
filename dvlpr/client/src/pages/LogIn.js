@@ -40,34 +40,35 @@ const SignIn = (props) => {
 
   return (
     <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
-      <div class="bg-coolGray-light py-20 px-5 shadow rounded-lg sm:px-">
-        <h1 class="text-purple-regular text-2xl ">DVLPR</h1>
+      <div class="bg-gradient-to-b from-coolGray-light to-purple-light py-20 px-5 shadow rounded-lg sm:px-">
+        <h1 class="text-purple-light text-2xl font-bold font-brand">Sign In</h1>
         <form onSubmit={handleSubmit} class="mb-0 space-y-5 ">
           <div>
-            <div class="mt-1">
+            <div class="mt-1 ">
               <input
                 name="email"
                 value={formValues.email}
                 onChange={handleChange}
                 placeholder="Email"
                 required
-                class="text-center border border-coolGray-light px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-purple-regular focus:ring-1 focus:ring-purple-regular"
+                class="text-center bg-gradient-to-b from-white-regular to-coolGray-light border border-coolGray-light px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-purple-regular focus:ring-1 focus:ring-purple-regular"
               />
             </div>
           </div>
-
-          <input
-            name="password"
-            value={formValues.password}
-            onChange={handleChange}
-            placeholder="Password"
-            required
-            class="text-center border border-coolGray-light px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-purple-regular focus:ring-1 focus:ring-purple-regular"
-          />
+          <div>
+            <input
+              name="password"
+              value={formValues.password}
+              onChange={handleChange}
+              placeholder="Password"
+              required
+              class="text-center bg-gradient-to-b from-white-regular to-coolGray-light border border-coolGray-light px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-purple-regular focus:ring-1 focus:ring-purple-regular"
+            />
+          </div>
           <button
             type="submit"
             disabled={formValues.userName && formValues.password ? false : true}
-            class="bg-purple-regular hover:bg-purple-regular text-coolGray-light font-bold py-3 px-20 rounded-full"
+            class="bg-purple-regular  text-coolGray-light font-bold py-3 px-20 rounded-full"
           >
             Log In
           </button>

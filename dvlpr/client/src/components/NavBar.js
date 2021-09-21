@@ -5,11 +5,14 @@ export default function NavBar(auth, user, logOut) {
   if (user) {
     userOptions = (
       <div class="space-x-10 text-right">
-        <NavLink className="hover:text-purple-regular hover:underline" to="/">
+        <NavLink
+          className="hover:text-purple-regular hover:underline text-xl font-bold font-brand"
+          to="/"
+        >
           Home
         </NavLink>
         <NavLink
-          className="hover:text-purple-regular hover:underline"
+          className="hover:text-purple-regular hover:underline text-xl font-bold font-brand"
           onClick={logOut}
           to="/login"
         >
@@ -28,7 +31,12 @@ export default function NavBar(auth, user, logOut) {
 
   return (
     <div class=" bg-gradient-to-b from-coolGray-light w-full h-full p-10 ">
-      <NavLink to="/">DVLPR</NavLink>
+      <NavLink
+        className="text-purple-light font-black font-brand text-3xl tracking-tighter hover:text-purple-regular "
+        to="/"
+      >
+        DVLPR
+      </NavLink>
       {auth && user ? userOptions : publicOptions}
     </div>
   )
