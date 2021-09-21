@@ -33,7 +33,7 @@ const GetCommentById = async (req, res) => {
 }
 const UpdateCommentById = async (req, res) => {
   try {
-    let commentCreator = parseInt(req.params.commentId)
+    let commentCreator = req.params.commentId
     let updatedComment = await Comment.update(req.body, {
       where: { id: commentCreator },
       returning: true
