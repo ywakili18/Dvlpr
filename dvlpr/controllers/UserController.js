@@ -26,6 +26,9 @@ const GetUserProfile = async (req, res) => {
 
 const CreateUser = async (req, res) => {
   try {
+    let userBody = req.body
+    let user = await User.create(userBody)
+    res.send(user)
   } catch (error) {
     throw error
   }

@@ -17,8 +17,21 @@ const GetPostsandComments = async (req, res) => {
         as: 'postsAndComments'
       }
     })
-    // const userAndPosts = await User.find({ include: Post })
+
     res.send(postsAndComments)
+  } catch (error) {
+    throw error
+  }
+}
+const CreateUser = async (req, res) => {
+  try {
+    let postCreator = parseInt(req.params.userId)
+    let postBody = {
+      postCreator,
+      ...req.body
+    }
+    let post = await Post.create(postBody)
+    res.send(post)
   } catch (error) {
     throw error
   }
@@ -26,5 +39,6 @@ const GetPostsandComments = async (req, res) => {
 
 module.exports = {
   GetPosts,
-  GetPostsandComments
+  GetPostsandComments,
+  CreateUser
 }
