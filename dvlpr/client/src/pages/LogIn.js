@@ -24,8 +24,8 @@ export default function SignIn() {
   }
 
   return (
-    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md text-center">
-      <div class="bg-coolGray-light py-20 px-5 shadow rounded-lg sm:px-5">
+    <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
+      <div class="bg-coolGray-light py-20 px-5 shadow rounded-lg sm:px-">
         <h1 class="text-purple-regular text-2xl ">DVLPR</h1>
         <form onSubmit={handleSubmit} class="mb-0 space-y-5 ">
           <div>
