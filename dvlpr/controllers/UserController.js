@@ -24,7 +24,15 @@ const GetUserProfile = async (req, res) => {
   }
 }
 
+const CreateUser = async (req, res) => {
+  try {
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   GetProfiles,
-  GetUserProfile
+  GetUserProfile,
+  CreateUser
 }

@@ -4,9 +4,15 @@ export default function NavBar(auth, user, logOut) {
   let userOptions
   if (user) {
     userOptions = (
-      <div class="space-x-10 text-right hover:text-purple-regular underline  ">
-        <NavLink to="/">Home</NavLink>
-        <NavLink onClick={logOut} to="/login">
+      <div class="space-x-10 text-right">
+        <NavLink className="hover:text-purple-regular hover:underline" to="/">
+          Home
+        </NavLink>
+        <NavLink
+          className="hover:text-purple-regular hover:underline"
+          onClick={logOut}
+          to="/login"
+        >
           Sign Out
         </NavLink>
       </div>
