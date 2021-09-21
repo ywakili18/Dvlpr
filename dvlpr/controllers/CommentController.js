@@ -25,7 +25,6 @@ const GetCommentById = async (req, res) => {
   try {
     let commentId = req.params.commentId
     let comment = await Comment.findByPk(commentId)
-
     res.send(comment)
   } catch (error) {
     throw error
