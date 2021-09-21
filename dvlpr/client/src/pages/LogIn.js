@@ -1,9 +1,24 @@
 import { useState } from 'react'
 import { LogInUser } from '../services/Auth'
+import { connect } from 'react-redux'
+import { LoginUser, authenticateUser } from '../store/actions/UserActions'
 
-export default function SignIn() {
+const mapStateToProps = (state) => {
+  return {
+    userState: state.userState
+  }
+}
+
+const mapActionsToProps = (dispatch) => {
+  return {
+    loginUser: (user) => dispatch(LogInUser(user)),
+    authUser: (toggle) => dispatch(authenticateUser(toggle))
+  }
+}
+
+const SignIn = (props) => {
   const [formValues, setFormValues] = useState({
-    userName: '',
+    email: '',
     password: ''
   })
 
@@ -11,16 +26,16 @@ export default function SignIn() {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    LogInUser({
-      userName: formValues.userName,
-      password: formValues.password
-    })
+    const res = await LogInUser(formValues)
     setFormValues({
-      userName: '',
+      email: '',
       password: ''
     })
+    props.loginUser(res)
+    props.authUser(true)
+    props.history.push('/home')
   }
 
   return (
@@ -31,10 +46,10 @@ export default function SignIn() {
           <div>
             <div class="mt-1">
               <input
-                name="userName"
-                value={formValues.userName}
+                name="email"
+                value={formValues.email}
                 onChange={handleChange}
-                placeholder="User Name"
+                placeholder="Email"
                 required
                 class="text-center border border-coolGray-light px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-purple-regular focus:ring-1 focus:ring-purple-regular"
               />
@@ -61,3 +76,5 @@ export default function SignIn() {
     </div>
   )
 }
+
+export default connect(mapStateToProps, mapActionsToProps)(SignIn)
