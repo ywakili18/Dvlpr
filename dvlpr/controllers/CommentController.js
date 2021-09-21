@@ -23,10 +23,10 @@ const CreateComment = async (req, res) => {
 }
 const GetCommentById = async (req, res) => {
   try {
-    const postsAndComments = await Comment.findByPk(req.params.post_id, {
-      include: [{ model: Comment, as: 'comments' }]
-    })
-    res.send(postsAndComments)
+    let commentId = req.params.commentId
+    let comment = await Comment.findByPk(commentId)
+
+    res.send(comment)
   } catch (error) {
     throw error
   }
@@ -34,7 +34,7 @@ const GetCommentById = async (req, res) => {
 const UpdateCommentById = async (req, res) => {
   try {
     let commentCreator = parseInt(req.params.commentId)
-    let updatedComment = await Post.update(req.body, {
+    let updatedComment = await Comment.update(req.body, {
       where: { id: commentCreator },
       returning: true
     })
@@ -43,6 +43,7 @@ const UpdateCommentById = async (req, res) => {
     throw error
   }
 }
+
 const DeleteComment = async (req, res) => {
   try {
     let commentId = parseInt(req.params.commentId)
