@@ -12,6 +12,12 @@ module.exports = {
       },
       coolGray: {
         light: '#BDC6D1'
+      },
+      green: {
+        light: '#81DCD7'
+      },
+      purple: {
+        regular: '#9D1EFF'
       }
     }
   },
