@@ -1,4 +1,4 @@
-const { User, Post } = require('../models')
+const { User, Post, Comment } = require('../models')
 
 const GetPosts = async (req, res) => {
   try {
@@ -9,12 +9,16 @@ const GetPosts = async (req, res) => {
   }
 }
 
-const GetUserProfile = async (req, res) => {
+const GetPostsandComments = async (req, res) => {
   try {
-    const userAndPosts = await User.findByPk(req.params.userId, {
-      include: [{ model: Post, as: 'posts' }]
+    const postsAndComments = await Post.findByPk(req.params.postId, {
+      include: {
+        model: Comment,
+        as: 'postsAndComments'
+      }
     })
-    res.send(userAndPosts)
+    // const userAndPosts = await User.find({ include: Post })
+    res.send(postsAndComments)
   } catch (error) {
     throw error
   }
@@ -22,5 +26,5 @@ const GetUserProfile = async (req, res) => {
 
 module.exports = {
   GetPosts,
-  GetUserProfile
+  GetPostsandComments
 }
