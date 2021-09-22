@@ -8,7 +8,16 @@ const GetProfiles = async (req, res) => {
     throw error
   }
 }
-
+// test purposes
+// const GetUserById = async (req, res) => {
+//   try {
+//     let userId = req.params.userId
+//     let user = await Comment.findByPk(user)
+//     res.send(user)
+//   } catch (error) {
+//     throw error
+//   }
+// }
 const GetUserProfile = async (req, res) => {
   try {
     const userAndPosts = await User.findByPk(req.params.userId, {

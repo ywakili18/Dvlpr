@@ -14,15 +14,15 @@ const Comments = (data) => {
     }
     getComments()
   }, [])
-
+  console.log('this is' + comments)
   return (
     <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
       <ul>
         {/* listing through comments and attaching userId  */}
         {comments.map((comment) => (
           <div>
+            {/* <Comment /> */}
             <li key={comment.Id}>{comment.userId}</li>
-
             <li key={comment.Id}>{comment.commentContent}</li>
           </div>
         ))}
