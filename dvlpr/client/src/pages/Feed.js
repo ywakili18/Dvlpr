@@ -29,7 +29,7 @@ const mapActionsToProps = (dispatch) => {
 
 const Feed = (props) => {
   const handleSubmit = async (e) => {
-    e.preventDefualt()
+    e.preventDefault()
     await props.createPost({
       userId: props.userState.user.id,
       postContent: props.postState.newPost.postContent
