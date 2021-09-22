@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <LogIn />
       <header className="App-header"></header>
     </div>
   )
