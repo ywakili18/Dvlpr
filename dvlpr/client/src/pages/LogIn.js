@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { LogInUser } from '../services/Auth'
 import { connect } from 'react-redux'
-import { LoginUser, authenticateUser } from '../store/actions/UserActions'
+import { User, authenticateUser } from '../store/actions/UserActions'
 
 const mapStateToProps = (state) => {
   return {
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapActionsToProps = (dispatch) => {
   return {
-    loginUser: (user) => dispatch(LoginUser(user)),
+    loginUser: (user) => dispatch(User(user)),
     authUser: (toggle) => dispatch(authenticateUser(toggle))
   }
 }
@@ -33,9 +33,10 @@ const SignIn = (props) => {
       email: '',
       password: ''
     })
+    console.log(res)
     props.loginUser(res)
     props.authUser(true)
-    props.history.push('/home')
+    props.history.push('/')
   }
 
   return (
@@ -67,7 +68,6 @@ const SignIn = (props) => {
           </div>
           <button
             type="submit"
-            disabled={formValues.userName && formValues.password ? false : true}
             class="bg-purple-regular  text-coolGray-light font-bold py-3 px-20 rounded-full"
           >
             Log In
