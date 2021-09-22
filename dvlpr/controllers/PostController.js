@@ -25,6 +25,7 @@ const GetPostsandComments = async (req, res) => {
 }
 const CreatePost = async (req, res) => {
   try {
+    console.log(req.params)
     let postCreator = parseInt(req.params.userId)
     let postBody = {
       postCreator,

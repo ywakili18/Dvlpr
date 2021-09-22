@@ -11,7 +11,7 @@ export const GetPosts = async () => {
 
 export const NewPost = async (newPost) => {
   try {
-    const res = await Client.post('/createPost', newPost)
+    const res = await Client.post('/posts/createPost', newPost)
     return res.data
   } catch (err) {
     throw err
