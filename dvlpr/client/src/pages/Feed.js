@@ -21,7 +21,7 @@ const mapActionsToProps = (dispatch) => {
   return {
     loadPosts: () => dispatch(LoadPosts()),
     createPost: (newPost) => dispatch(CreatePost(newPost)),
-    newPostState: (userId, content) => dispatch(NewPostState(userId, content)),
+    newPostState: (content) => dispatch(NewPostState(content)),
     setUser: (user) => dispatch(User(user)),
     authUser: (toggle) => dispatch(authenticateUser(toggle))
   }
@@ -34,6 +34,7 @@ const Feed = (props) => {
       userId: props.userState.user.id,
       postContent: props.postState.newPost.postContent
     })
+    props.newPostState({ postContent: '' })
   }
 
   const handleChange = (e) => {
@@ -46,6 +47,7 @@ const Feed = (props) => {
     <div>
       <Comments />
       <NewPost
+        key="newPostInput"
         onChange={handleChange}
         onSubmit={handleSubmit}
         value={props.postState.newPost.postContent}
