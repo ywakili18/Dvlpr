@@ -1,6 +1,5 @@
 import axios from 'axios'
 import Client from '../services/api'
-import Comment from './Comment'
 import { useState, useEffect } from 'react'
 
 const Comments = (data) => {
@@ -14,20 +13,23 @@ const Comments = (data) => {
     }
     getComments()
   }, [])
-  console.log('this is' + comments)
+  // console.log('this is' + comments)
   return (
     <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
-      <ul>
-        {/* listing through comments and attaching userId  */}
-        {comments.map((comment) => (
-          <div>
-            {/* <Comment /> */}
-            <li key={comment.Id}>{comment.commentsAndUsers.userName}</li>
-            <li key={comment.Id}>{comment.commentContent}</li>
-            <li key={comment.Id}>{comment.createdAt}</li>
-          </div>
-        ))}
-      </ul>
+      <div class="bg-gradient-to-b from-coolGray-light to-purple-light py-2 px-10 shadow rounded-lg md:w-full">
+        <ul>
+          <h1 class="text-purple-light text-2xl font-bold font-brand">
+            Comments section
+          </h1>
+          {comments.map((comment) => (
+            <div class="mt-10 border">
+              <li key={comment.Id}>{comment.commentsAndUsers.userName}</li>
+              <li key={comment.Id}>{comment.commentContent}</li>
+              <li key={comment.Id}>{comment.createdAt}</li>
+            </div>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }
