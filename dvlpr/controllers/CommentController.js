@@ -1,13 +1,21 @@
 const { User, Post, Comment } = require('../models')
 
-const GetComment = async (req, res) => {
+const GetComments = async (req, res) => {
   try {
-    const comments = await Comment.findAll()
+    const comments = await Comment.findAll({
+      include: {
+        model: User,
+        as: 'commentsAndUsers',
+        attributes: ['id', 'userName']
+      }
+    })
+
     res.send(comments)
   } catch (error) {
     throw error
   }
 }
+
 const CreateComment = async (req, res) => {
   try {
     let commentCreator = parseInt(req.params.userId)
@@ -54,7 +62,7 @@ const DeleteComment = async (req, res) => {
 }
 module.exports = {
   CreateComment,
-  GetComment,
+  GetComments,
   GetCommentById,
   UpdateCommentById,
   DeleteComment

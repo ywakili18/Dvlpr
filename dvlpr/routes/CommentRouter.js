@@ -2,7 +2,7 @@ const Router = require('express').Router()
 const controller = require('../controllers/CommentController')
 const middleware = require('../middleware')
 
-Router.get('/', controller.GetComment)
+Router.get('/', controller.GetComments)
 Router.get(
   '/:commentId',
   middleware.stripToken,
