@@ -1,5 +1,5 @@
 import React from 'react'
-const Comment = () => {
+const Comment = ({ comment }) => {
   return (
     <div>
       <div>Comment</div>
