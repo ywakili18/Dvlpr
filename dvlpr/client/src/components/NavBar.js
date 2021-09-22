@@ -33,7 +33,7 @@ const NavBar = (props) => {
           Home
         </NavLink>
         <NavLink
-          className="hover:text-purple-regular hover:underline text-xl font-bold font-brand"
+          className="hover:text-purple-regular hover:underline text-xl font-bold font-brand "
           onClick={logOut}
           to="/login"
         >
@@ -44,8 +44,15 @@ const NavBar = (props) => {
   }
 
   const publicOptions = (
-    <div>
-      <NavLink to="/login">Log In</NavLink>
+    <div className="text-right">
+      <div>
+        <NavLink
+          to="/login"
+          className="hover:text-purple-regular hover:underline text-xl font-bold font-brand"
+        >
+          Log In
+        </NavLink>
+      </div>
       <NavLink
         className="hover:text-purple-regular hover:underline text-xl font-bold font-brand"
         onClick={logOut}

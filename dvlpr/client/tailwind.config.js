@@ -26,6 +26,9 @@ module.exports = {
       },
       white: {
         regular: '#FCFCFC'
+      },
+      pink: {
+        hot: '#c400fa'
       }
     }
   },

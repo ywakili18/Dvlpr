@@ -105,7 +105,7 @@ export default function Register(props) {
                     ? false
                     : true
                 }
-                class="bg-purple-regular  text-coolGray-light font-bold py-3 px-20 rounded-full"
+                class="bg-purple-regular hover:bg-pink-hot text-coolGray-light font-bold py-3 px-20 rounded-full"
               >
                 Submit
               </button>

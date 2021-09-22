@@ -1,11 +1,13 @@
 import { useEffect } from 'react'
-import NewPost from '../components/NewPost'
+import Comment from '../components/Comment'
 import PostCard from '../components/PostCard'
-
+import Comments from '../components/Comments'
 export default function () {
   return (
     <div>
-      <NewPost />
+      <Comments />
+      <Comment />
+      <PostCard />
     </div>
   )
 }
