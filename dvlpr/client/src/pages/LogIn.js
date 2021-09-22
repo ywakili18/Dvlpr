@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { LogInUser } from '../services/Auth'
 import { connect } from 'react-redux'
 import { User, authenticateUser } from '../store/actions/UserActions'
+import { CheckSession } from '../services/Auth'
 
 const mapStateToProps = (state) => {
   return {
@@ -11,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapActionsToProps = (dispatch) => {
   return {
-    loginUser: (user) => dispatch(User(user)),
+    setUser: (user) => dispatch(User(user)),
     authUser: (toggle) => dispatch(authenticateUser(toggle))
   }
 }
@@ -21,6 +22,20 @@ const SignIn = (props) => {
     email: '',
     password: ''
   })
+
+  const checkToken = async () => {
+    const session = await CheckSession()
+    props.setUser(session)
+    props.authUser(true)
+    props.history.push('/home')
+  }
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken()
+    }
+  }, [])
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
@@ -34,9 +49,9 @@ const SignIn = (props) => {
       password: ''
     })
     console.log(res)
-    props.loginUser(res)
+    props.setUser(res)
     props.authUser(true)
-    props.history.push('/')
+    props.history.push('/home')
   }
 
   return (
