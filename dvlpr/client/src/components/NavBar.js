@@ -71,7 +71,7 @@ const NavBar = (props) => {
       >
         DVLPR
       </NavLink>
-      {props.userState.authenticated === true && props.userState.user
+      {props.userState.authenticated && props.userState.user
         ? userOptions
         : publicOptions}
     </div>
