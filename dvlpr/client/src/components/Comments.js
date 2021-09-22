@@ -22,8 +22,9 @@ const Comments = (data) => {
         {comments.map((comment) => (
           <div>
             {/* <Comment /> */}
-            <li key={comment.Id}>{comment.userId}</li>
+            <li key={comment.Id}>{comment.commentsAndUsers.userName}</li>
             <li key={comment.Id}>{comment.commentContent}</li>
+            <li key={comment.Id}>{comment.createdAt}</li>
           </div>
         ))}
       </ul>
