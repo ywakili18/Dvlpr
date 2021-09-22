@@ -2,16 +2,16 @@ import axios from 'axios'
 import Client from '../services/api'
 import { useState, useEffect } from 'react'
 
-const Comments = (data) => {
-  const [comments, manageComments] = useState([])
-  // fetch all comments
+const Posts = (data) => {
+  const [posts, managePosts] = useState([])
+  // fetch all posts
   useEffect(() => {
-    async function getComments() {
-      const res = await Client.get('/comments', data)
+    async function getPosts() {
+      const res = await Client.get('/posts', data)
       console.log(res)
-      manageComments(res.data)
+      managePosts(res.data)
     }
-    getComments()
+    getPosts()
   }, [])
   // console.log('this is' + comments)
   return (
@@ -19,9 +19,9 @@ const Comments = (data) => {
       <div class="bg-gradient-to-b from-coolGray-light to-purple-light py-2 px-10 shadow rounded-lg md:w-full">
         <ul>
           <h1 class="text-purple-light text-2xl font-bold font-brand">
-            Comments section
+            Posts section
           </h1>
-          {comments.map((comment) => (
+          {posts.map((post) => (
             <div
               class="mt-10 border text-center bg-gradient-to-b 
             from-white-regular to-coolGray-light 
@@ -30,9 +30,8 @@ const Comments = (data) => {
         focus:border-purple-regular focus:ring-1 
         focus:ring-purple-regular md:w-full text-s"
             >
-              <li key={comment.Id}>{comment.commentsAndUsers.userName}</li>
-              <li key={comment.Id}>{comment.commentContent}</li>
-              <li key={comment.Id}>timestamp {comment.createdAt}</li>
+              <li key={post.Id}>{post.postContent}</li>
+              <li key={post.Id}>timestamp {post.createdAt}</li>
             </div>
           ))}
         </ul>
@@ -40,4 +39,4 @@ const Comments = (data) => {
     </div>
   )
 }
-export default Comments
+export default Posts
