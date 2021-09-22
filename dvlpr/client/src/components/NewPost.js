@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
 
-export default function NewPost() {
+const NewPost = () => {
   return (
     <div>
-      <div></div>
+      <h1>THIS IS BIG TEXT</h1>
     </div>
   )
 }
+export default NewPost
