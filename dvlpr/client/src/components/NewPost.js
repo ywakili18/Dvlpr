@@ -27,7 +27,7 @@ const NewPost = () => {
             <div class="mt-1">
               <button
                 type="submit"
-                class="bg-purple-regular  text-coolGray-light font-bold  px-2 rounded-full text-2xl"
+                class="bg-purple-regular  hover:bg-pink-hot text-coolGray-light font-bold py-3 px-5 rounded-full"
               >
                 +
               </button>
