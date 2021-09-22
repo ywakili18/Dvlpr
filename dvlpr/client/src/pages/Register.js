@@ -29,7 +29,7 @@ export default function Register(props) {
     <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
       <div class="bg-gradient-to-b from-purple-regular to-coolGray-light py-20 px-5 shadow rounded-lg sm:px-">
         <h1 class="text-coolGray-light text-2xl font-bold font-brand py-10">
-          Register
+          REGISTER
         </h1>
         <form onSubmit={handleSubmit} class="mb-0 space-y-5 ">
           <div>

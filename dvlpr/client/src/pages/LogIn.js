@@ -28,13 +28,13 @@ const SignIn = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const res = await LogInUser(formValues)
+    const payload = await LogInUser(formValues)
     setFormValues({
       email: '',
       password: ''
     })
-    console.log(res)
-    props.loginUser(res)
+    console.log(payload)
+    props.loginUser(payload)
     props.authUser(true)
     props.history.push('/')
   }
@@ -68,6 +68,7 @@ const SignIn = (props) => {
             />
           </div>
           <button
+            disabled={!formValues.email || !formValues.password}
             type="submit"
             class="bg-purple-regular hover:bg-pink-hot text-coolGray-light font-bold py-3 px-20 rounded-full"
           >
