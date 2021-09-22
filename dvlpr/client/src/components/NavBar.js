@@ -1,29 +1,43 @@
 import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { User, authenticateUser } from '../store/actions/UserActions'
 
-export default function NavBar(auth, user, logOut) {
+const mapStateToProps = (state) => {
+  return {
+    userState: state.userState
+  }
+}
+
+const mapActionsToProps = (dispatch) => {
+  return {
+    logOutUser: (user) => dispatch(User(user)),
+    authUser: (toggle) => dispatch(authenticateUser(toggle))
+  }
+}
+
+const NavBar = (props) => {
+  const logOut = () => {
+    props.logOutUser(null)
+    props.authUser(false)
+    localStorage.clear()
+  }
+
   let userOptions
-  if (user) {
+  if (props.userState.user) {
     userOptions = (
       <div class="space-x-10 text-right">
-        {/* <NavLink
+        <NavLink
           className="hover:text-purple-regular hover:underline text-xl font-bold font-brand"
           to="/"
         >
           Home
-        </NavLink> */}
+        </NavLink>
         <NavLink
           className="hover:text-purple-regular hover:underline text-xl font-bold font-brand"
           onClick={logOut}
           to="/login"
         >
-          Sign In
-        </NavLink>
-        <NavLink
-          className="hover:text-purple-regular hover:underline text-xl font-bold font-brand"
-          onClick={logOut}
-          to="/register"
-        >
-          Not a DVLPR? Sign up!
+          Log Out
         </NavLink>
       </div>
     )
@@ -32,7 +46,13 @@ export default function NavBar(auth, user, logOut) {
   const publicOptions = (
     <div>
       <NavLink to="/login">Log In</NavLink>
-      <NavLink to="/signup">Sign Up</NavLink>
+      <NavLink
+        className="hover:text-purple-regular hover:underline text-xl font-bold font-brand"
+        onClick={logOut}
+        to="/register"
+      >
+        Not a DVLPR? Sign up!
+      </NavLink>
     </div>
   )
 
@@ -44,7 +64,11 @@ export default function NavBar(auth, user, logOut) {
       >
         DVLPR
       </NavLink>
-      {auth && user ? userOptions : publicOptions}
+      {props.userState.authenticated && props.userState.user
+        ? userOptions
+        : publicOptions}
     </div>
   )
 }
+
+export default connect(mapStateToProps, mapActionsToProps)(NavBar)

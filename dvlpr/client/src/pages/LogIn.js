@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { LogInUser } from '../services/Auth'
 import { connect } from 'react-redux'
-import { LoginUser, authenticateUser } from '../store/actions/UserActions'
+import { User, authenticateUser } from '../store/actions/UserActions'
 
 const mapStateToProps = (state) => {
   return {
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapActionsToProps = (dispatch) => {
   return {
-    loginUser: (user) => dispatch(LoginUser(user)),
+    loginUser: (user) => dispatch(User(user)),
     authUser: (toggle) => dispatch(authenticateUser(toggle))
   }
 }
