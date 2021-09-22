@@ -43,7 +43,7 @@ const SignIn = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const payload = await LogInUser(formValues)
+    const res = await LogInUser(formValues)
     setFormValues({
       email: '',
       password: ''
