@@ -33,9 +33,10 @@ const SignIn = (props) => {
       email: '',
       password: ''
     })
+    console.log(res)
     props.loginUser(res)
     props.authUser(true)
-    props.history.push('/home')
+    props.history.push('/')
   }
 
   return (
@@ -67,7 +68,6 @@ const SignIn = (props) => {
           </div>
           <button
             type="submit"
-            disabled={formValues.userName && formValues.password ? false : true}
             class="bg-purple-regular  text-coolGray-light font-bold py-3 px-20 rounded-full"
           >
             Log In
