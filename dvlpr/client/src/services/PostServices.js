@@ -21,5 +21,7 @@ export const NewPost = async (newPost) => {
 export const DeletePost = async (postId) => {
   try {
     const res = await Client.delete(`/${postId}`)
+  } catch (err) {
+    throw err
   }
 }

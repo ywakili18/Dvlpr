@@ -8,21 +8,22 @@ const iState = {
   confirmPassword: ''
 }
 
-export default function Register() {
+export default function Register(props) {
   const [formValues, setFormValues] = useState(iState)
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    RegisterUser({
-      userName: formValues.userName,
+    await RegisterUser({
       email: formValues.email,
-      password: formValues.password
+      password: formValues.password,
+      userName: formValues.userName
     })
     setFormValues(iState)
+    props.history.push('/login')
   }
   return (
     <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
