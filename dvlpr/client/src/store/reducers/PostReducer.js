@@ -2,7 +2,10 @@ import { GET_POSTS, NEW_POST } from '../types'
 
 const iState = {
   posts: [],
-  newPost: {}
+  newPost: {
+    userId: null,
+    postContent: ''
+  }
 }
 
 const PostReducer = (state = iState, action) => {
@@ -11,6 +14,8 @@ const PostReducer = (state = iState, action) => {
       return { ...state, posts: action.payload }
     case NEW_POST:
       return { ...state, newPost: action.payload }
+    default:
+      return { ...state }
   }
 }
 

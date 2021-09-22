@@ -1,15 +1,17 @@
 import './styles/App.css'
+import { Route } from 'react-router-dom'
+import NavBar from './components/NavBar'
 import Register from './pages/Register'
 import LogIn from './pages/LogIn'
-import NavBar from './components/NavBar'
-import { Link } from 'react-router-dom'
+import Feed from './pages/Feed'
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <LogIn />
-      <header className="App-header"></header>
+      <Route path="/" component={Feed} />
+      <Route path="/register" component={Register} />
+      <Route path="/login" component={LogIn} />
     </div>
   )
 }

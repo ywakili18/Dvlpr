@@ -18,7 +18,15 @@ export const LoadPosts = () => {
 
 export const CreatePost = (newPost) => {
   return async (dispatch) => {
-    const post = await NewPost(newPost)
-    dispatch()
+    try {
+      const post = await NewPost(newPost)
+      console.log(post)
+      dispatch({
+        type: NEW_POST,
+        payload: {}
+      })
+    } catch (err) {
+      throw err
+    }
   }
 }

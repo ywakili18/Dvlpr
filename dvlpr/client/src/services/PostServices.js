@@ -17,3 +17,9 @@ export const NewPost = async (newPost) => {
     throw err
   }
 }
+
+export const DeletePost = async (postId) => {
+  try {
+    const res = await Client.delete(`/${postId}`)
+  }
+}
