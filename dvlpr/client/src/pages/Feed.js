@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import Comment from '../components/Comment'
 import PostCard from '../components/PostCard'
 import Comments from '../components/Comments'
 import NewPost from '../components/NewPost'
@@ -9,7 +8,6 @@ import {
   NewPostState
 } from '../store/actions/PostActions'
 import { User, authenticateUser } from '../store/actions/UserActions'
-import { CheckSession } from '../services/Auth'
 import { connect } from 'react-redux'
 
 const mapStateToProps = (state) => {
