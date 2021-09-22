@@ -59,6 +59,7 @@ const SignIn = (props) => {
           <div>
             <input
               name="password"
+              type="password"
               value={formValues.password}
               onChange={handleChange}
               placeholder="Password"
@@ -68,7 +69,7 @@ const SignIn = (props) => {
           </div>
           <button
             type="submit"
-            class="bg-purple-regular  text-coolGray-light font-bold py-3 px-20 rounded-full"
+            class="bg-purple-regular hover:bg-pink-hot text-coolGray-light font-bold py-3 px-20 rounded-full"
           >
             Log In
           </button>

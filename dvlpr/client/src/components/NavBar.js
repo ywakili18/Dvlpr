@@ -33,7 +33,7 @@ const NavBar = (props) => {
           Home
         </NavLink>
         <NavLink
-          className="hover:text-purple-regular hover:underline text-xl font-bold font-brand"
+          className="hover:text-purple-regular hover:underline text-xl font-bold font-brand "
           onClick={logOut}
           to="/login"
         >
@@ -44,10 +44,17 @@ const NavBar = (props) => {
   }
 
   const publicOptions = (
-    <div>
-      <NavLink to="/login">Log In</NavLink>
+    <div className="text-right">
+      <div>
+        <NavLink
+          to="/login"
+          className="hover:text-purple-regular hover:underline text-xl font-bold font-brand text-purple-light"
+        >
+          Log In
+        </NavLink>
+      </div>
       <NavLink
-        className="hover:text-purple-regular hover:underline text-xl font-bold font-brand"
+        className="hover:text-purple-regular hover:underline text-xl font-bold font-brand text-purple-light"
         onClick={logOut}
         to="/register"
       >
@@ -57,9 +64,9 @@ const NavBar = (props) => {
   )
 
   return (
-    <div class=" bg-gradient-to-b from-coolGray-light w-full h-full p-10 ">
+    <div class="">
       <NavLink
-        className="text-purple-light font-black font-brand text-3xl tracking-tighter hover:text-purple-regular "
+        className="text-purple-light font-black font-brand text-3xl tracking-tighter hover:text-purple-regular px-2"
         to="/"
       >
         DVLPR

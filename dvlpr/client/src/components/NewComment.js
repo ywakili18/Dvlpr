@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
 
-const NewPost = () => {
+const NewComment = () => {
   return (
     <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
       <div class="bg-gradient-to-b from-coolGray-light to-purple-light py-2 px-10 shadow rounded-lg md:w-full">
         <h1 class="text-purple-light text-2xl font-bold font-brand">
-          New post
+          New comment
         </h1>
         <form>
           <div>
@@ -14,7 +14,7 @@ const NewPost = () => {
                 maxLength="255"
                 name="postContent"
                 type="text"
-                placeholder="add post here"
+                placeholder="add comment"
                 class="text-center bg-gradient-to-b 
                 from-white-regular to-coolGray-light 
             border border-coolGray-light py-8 px-4
@@ -27,8 +27,7 @@ const NewPost = () => {
             <div class="mt-1">
               <button
                 type="submit"
-                class="bg-purple-regular
-                hover:bg-pink-hot text-coolGray-light font-bold py-3 px-5 rounded-full "
+                class="bg-purple-regular  hover:bg-pink-hot text-coolGray-light font-bold py-3 px-5 rounded-full"
               >
                 +
               </button>
@@ -39,4 +38,4 @@ const NewPost = () => {
     </div>
   )
 }
-export default NewPost
+export default NewComment

@@ -27,8 +27,8 @@ export default function Register(props) {
   }
   return (
     <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
-      <div class="bg-gradient-to-b from-coolGray-light to-purple-light py-20 px-5 shadow rounded-lg sm:px-">
-        <h1 class="text-purple-light text-2xl font-bold font-brand">
+      <div class="bg-gradient-to-b from-purple-regular to-coolGray-light py-20 px-5 shadow rounded-lg sm:px-">
+        <h1 class="text-coolGray-light text-2xl font-bold font-brand py-10">
           Register
         </h1>
         <form onSubmit={handleSubmit} class="mb-0 space-y-5 ">
@@ -69,7 +69,7 @@ export default function Register(props) {
               <input
                 onChange={handleChange}
                 name="password"
-                type="text"
+                type="password"
                 placeholder="Password"
                 value={formValues.password}
                 required
@@ -85,7 +85,7 @@ export default function Register(props) {
               <input
                 onChange={handleChange}
                 name="confirmPassword"
-                type="text"
+                type="password"
                 placeholder="Confirm Password"
                 value={formValues.confirmPassword}
                 required
@@ -105,7 +105,7 @@ export default function Register(props) {
                     ? false
                     : true
                 }
-                class="bg-purple-regular  text-coolGray-light font-bold py-3 px-20 rounded-full"
+                class="bg-purple-regular hover:bg-pink-hot text-coolGray-light font-bold py-3 px-20 rounded-full"
               >
                 Submit
               </button>

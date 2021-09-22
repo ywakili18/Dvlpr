@@ -59,3 +59,6 @@ DVLPR is a social platform for all software developers to come together and netw
 - [ ]Adding code snippet in feed
 
 **_Credits_**
+- [Tailwindcss: CSS UI library](https://tailwindcss.com/)
+- [Keyframes for css animation](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)
+- [to make background image have opacity](https://stackoverflow.com/questions/7241341/can-i-set-an-opacity-only-to-the-background-image-of-a-div)
