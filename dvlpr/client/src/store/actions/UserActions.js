@@ -1,6 +1,6 @@
 import { LOGIN_USER, AUTHENTICATE_TOGGLE } from '../types'
 
-export const LoginUser = (user) => ({
+export const User = (user) => ({
   type: LOGIN_USER,
   payload: user
 })
