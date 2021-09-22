@@ -18,7 +18,7 @@ const Comments = (data) => {
   return (
     <div>
       <ul>
-        {/* listing through comments */}
+        {/* listing through comments  */}
         {comments.map((comment) => (
           <li key={comment.Id}>
             {comment.userId}
