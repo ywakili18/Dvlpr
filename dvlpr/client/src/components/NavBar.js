@@ -16,7 +16,7 @@ export default function NavBar(auth, user, logOut) {
           onClick={logOut}
           to="/login"
         >
-          Sign Out
+          Sign In
         </NavLink>
       </div>
     )
