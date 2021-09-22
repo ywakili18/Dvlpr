@@ -1,10 +1,12 @@
 import NewPost from './NewPost'
 import NewComment from './NewComment'
-export default function PostCard() {
+
+export default function PostCard(props) {
   return (
     <div>
       <div>
-        <NewPost />
+        <div>{props.userName}</div>
+        <div>{props.content}</div>
         <NewComment />
       </div>
     </div>

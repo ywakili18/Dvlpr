@@ -30,3 +30,8 @@ export const CreatePost = (newPost) => {
     }
   }
 }
+
+export const NewPostState = (post) => ({
+  type: NEW_POST,
+  payload: post
+})

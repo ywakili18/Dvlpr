@@ -1,13 +1,11 @@
-import { useEffect } from 'react'
-
-const NewPost = () => {
+const NewPost = (props) => {
   return (
     <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
       <div class="bg-gradient-to-b from-coolGray-light to-purple-light py-2 px-10 shadow rounded-lg md:w-full">
         <h1 class="text-purple-light text-2xl font-bold font-brand">
           New post
         </h1>
-        <form>
+        <form onSubmit={props.onSubmit}>
           <div>
             <div class="mt-10">
               <textarea
@@ -15,6 +13,8 @@ const NewPost = () => {
                 name="postContent"
                 type="text"
                 placeholder="add post here"
+                onChange={props.onChange}
+                value={props.value}
                 class="text-center bg-gradient-to-b 
                 from-white-regular to-coolGray-light 
             border border-coolGray-light py-8 px-4
