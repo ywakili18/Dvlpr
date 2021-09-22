@@ -27,7 +27,7 @@ export default function Register(props) {
   }
   return (
     <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
-      <div class="bg-gradient-to-b from-purple-light to-purple-regular py-20 px-5 shadow rounded-lg sm:px-">
+      <div class="bg-gradient-to-b from-purple-regular to-coolGray-light py-20 px-5 shadow rounded-lg sm:px-">
         <h1 class="text-coolGray-light text-2xl font-bold font-brand py-10">
           Register
         </h1>
