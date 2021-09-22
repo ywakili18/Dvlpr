@@ -5,7 +5,6 @@ import PostCard from '../components/PostCard'
 export default function () {
   return (
     <div>
-      <NewPost />
       <PostCard />
     </div>
   )
