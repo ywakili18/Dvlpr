@@ -1,4 +1,3 @@
-import NewPost from './NewPost'
 import NewComment from './NewComment'
 
 export default function PostCard(props) {
