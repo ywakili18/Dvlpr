@@ -6,7 +6,7 @@ export default function () {
   return (
     <div>
       <Comments />
-      <Comment />
+      {/* <Comment /> */}
       <PostCard />
     </div>
   )
