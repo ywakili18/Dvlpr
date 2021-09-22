@@ -1,6 +1,6 @@
 import axios from 'axios'
 import Client from '../services/api'
-
+import Comment from './Comment'
 import { useState, useEffect } from 'react'
 
 const Comments = (data) => {
@@ -16,14 +16,15 @@ const Comments = (data) => {
   }, [])
 
   return (
-    <div>
+    <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
       <ul>
-        {/* listing through comments  */}
+        {/* listing through comments and attaching userId  */}
         {comments.map((comment) => (
-          <li key={comment.Id}>
-            {comment.userId}
-            {comment.commentContent}
-          </li>
+          <div>
+            <li key={comment.Id}>{comment.userId}</li>
+
+            <li key={comment.Id}>{comment.commentContent}</li>
+          </div>
         ))}
       </ul>
     </div>
