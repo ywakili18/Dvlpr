@@ -28,14 +28,14 @@ const NavBar = (props) => {
       <div class="space-x-10 text-right">
         <NavLink
           className="hover:text-purple-regular hover:underline text-xl font-bold font-brand"
-          to="/"
+          to="/home"
         >
           Home
         </NavLink>
         <NavLink
           className="hover:text-purple-regular hover:underline text-xl font-bold font-brand "
           onClick={logOut}
-          to="/login"
+          to="/"
         >
           Log Out
         </NavLink>
@@ -47,7 +47,7 @@ const NavBar = (props) => {
     <div className="text-right">
       <div>
         <NavLink
-          to="/login"
+          to="/"
           className="hover:text-purple-regular hover:underline text-xl font-bold font-brand text-purple-light"
         >
           Log In
@@ -67,7 +67,7 @@ const NavBar = (props) => {
     <div class="">
       <NavLink
         className="text-purple-light font-black font-brand text-3xl tracking-tighter hover:text-purple-regular px-2"
-        to="/"
+        to="/home"
       >
         DVLPR
       </NavLink>
