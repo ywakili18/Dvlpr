@@ -59,6 +59,7 @@ const SignIn = (props) => {
           <div>
             <input
               name="password"
+              type="password"
               value={formValues.password}
               onChange={handleChange}
               placeholder="Password"
