@@ -5,18 +5,25 @@ export default function NavBar(auth, user, logOut) {
   if (user) {
     userOptions = (
       <div class="space-x-10 text-right">
-        <NavLink
+        {/* <NavLink
           className="hover:text-purple-regular hover:underline text-xl font-bold font-brand"
           to="/"
         >
           Home
-        </NavLink>
+        </NavLink> */}
         <NavLink
           className="hover:text-purple-regular hover:underline text-xl font-bold font-brand"
           onClick={logOut}
           to="/login"
         >
           Sign In
+        </NavLink>
+        <NavLink
+          className="hover:text-purple-regular hover:underline text-xl font-bold font-brand"
+          onClick={logOut}
+          to="/register"
+        >
+          Not a DVLPR? Sign up!
         </NavLink>
       </div>
     )
