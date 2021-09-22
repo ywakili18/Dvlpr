@@ -69,7 +69,7 @@ export default function Register(props) {
               <input
                 onChange={handleChange}
                 name="password"
-                type="text"
+                type="password"
                 placeholder="Password"
                 value={formValues.password}
                 required
@@ -85,7 +85,7 @@ export default function Register(props) {
               <input
                 onChange={handleChange}
                 name="confirmPassword"
-                type="text"
+                type="password"
                 placeholder="Confirm Password"
                 value={formValues.confirmPassword}
                 required

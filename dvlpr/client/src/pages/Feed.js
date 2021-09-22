@@ -5,7 +5,7 @@ import PostCard from '../components/PostCard'
 export default function () {
   return (
     <div>
-      <PostCard />
+      <NewPost />
     </div>
   )
 }
