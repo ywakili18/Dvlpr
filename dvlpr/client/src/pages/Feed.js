@@ -30,18 +30,21 @@ const mapActionsToProps = (dispatch) => {
 const Feed = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefualt()
-    await props.createPost(props.postState.newPost)
+    await props.createPost({
+      userId: props.userState.user.id,
+      postContent: props.postState.newPost.postContent
+    })
   }
 
   const handleChange = (e) => {
     props.newPostState({
-      userId: props.userState.user.id,
       postContent: e.target.value
     })
   }
 
   return (
     <div>
+      <Comments />
       <NewPost
         onChange={handleChange}
         onSubmit={handleSubmit}
