@@ -27,8 +27,8 @@ export default function Register(props) {
   }
   return (
     <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
-      <div class="bg-gradient-to-b from-coolGray-light to-purple-light py-20 px-5 shadow rounded-lg sm:px-">
-        <h1 class="text-purple-light text-2xl font-bold font-brand">
+      <div class="bg-gradient-to-b from-purple-light to-purple-regular py-20 px-5 shadow rounded-lg sm:px-">
+        <h1 class="text-coolGray-light text-2xl font-bold font-brand py-10">
           Register
         </h1>
         <form onSubmit={handleSubmit} class="mb-0 space-y-5 ">

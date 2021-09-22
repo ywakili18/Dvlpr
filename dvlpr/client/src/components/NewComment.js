@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 const NewComment = () => {
   return (
     <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
-      <div class="bg-gradient-to-b from-coolGray-light to-purple-light py-20 px-5 shadow rounded-lg md:w-full">
+      <div class="bg-gradient-to-b from-coolGray-light to-purple-light py-2 px-10 shadow rounded-lg md:w-full">
         <h1 class="text-purple-light text-2xl font-bold font-brand">
           New comment
         </h1>
@@ -16,8 +16,8 @@ const NewComment = () => {
                 type="text"
                 placeholder="add comment"
                 class="text-center bg-gradient-to-b 
-            from-white-regular to-coolGray-light 
-            border border-coolGray-light py-16 px-4
+                from-white-regular to-coolGray-light 
+            border border-coolGray-light py-8 px-4
             rounded-lg shadow-sm focus:outline-none 
             focus:border-purple-regular focus:ring-1 
             focus:ring-purple-regular md:w-full text-s"
