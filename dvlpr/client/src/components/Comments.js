@@ -22,7 +22,14 @@ const Comments = (data) => {
             Comments section
           </h1>
           {comments.map((comment) => (
-            <div class="mt-10 border">
+            <div
+              class="mt-10 border text-center bg-gradient-to-b 
+            from-white-regular to-coolGray-light 
+        border border-coolGray-light py-8 px-4
+        rounded-lg shadow-sm focus:outline-none 
+        focus:border-purple-regular focus:ring-1 
+        focus:ring-purple-regular md:w-full text-s"
+            >
               <li key={comment.Id}>{comment.commentsAndUsers.userName}</li>
               <li key={comment.Id}>{comment.commentContent}</li>
               <li key={comment.Id}>{comment.createdAt}</li>
