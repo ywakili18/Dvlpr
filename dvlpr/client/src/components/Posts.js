@@ -1,8 +1,7 @@
-import axios from 'axios'
 import Client from '../services/api'
 import { useState, useEffect } from 'react'
-import Comments from './Comments'
-import NewComment from './NewComment'
+import PostCard from './PostCard'
+
 const Posts = (data) => {
   const [posts, managePosts] = useState([])
   // fetch all posts
@@ -29,21 +28,13 @@ const Posts = (data) => {
         focus:border-purple-regular focus:ring-1 
         focus:ring-purple-regular md:w-full text-s"
             >
-              <li key={post.Id}>{post.postContent}</li>
-              <li key={post.Id}>timestamp {post.createdAt}</li>
-              <NewComment />
-              <div>
-                <li key={post.Id}>
-                  {post.postsAndComments.map((comment) => (
-                    <Comments
-                      key={comment.id}
-                      comments={comment.commentContent}
-                      timeStamp={comment.createdAt}
-                      user={comment.commentsAndUsers.userName}
-                    />
-                  ))}
-                </li>
-              </div>
+              <PostCard
+                key={post.Id}
+                id={post.Id}
+                content={post.postContent}
+                timeStamp={post.createdAt}
+                comments={post.postsAndComments}
+              />
             </div>
           ))}
         </ul>
