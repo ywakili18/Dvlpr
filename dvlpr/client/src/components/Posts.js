@@ -29,6 +29,7 @@ const Posts = (data) => {
         focus:ring-purple-regular md:w-full text-s"
             >
               <PostCard
+                userId={post.userId}
                 key={post.Id}
                 id={post.Id}
                 content={post.postContent}

@@ -1,6 +1,13 @@
 import { useState } from 'react'
 import Comments from './Comments'
 import NewComment from './NewComment'
+import { connect } from 'react-redux'
+
+const mapStateToProps = (state) => {
+  return {
+    userState: state.userState
+  }
+}
 
 const PostCard = (props) => {
   const [edit, toggleEdit] = useState(false)
@@ -27,19 +34,27 @@ const PostCard = (props) => {
               value={postContent}
               onChange={handleChange}
             />
-            <button type="submit">Save Edit</button>
+            {props.userState.user.id === props.userId ? (
+              <button type="submit">Save Edit</button>
+            ) : (
+              <div></div>
+            )}
           </form>
         </div>
       ) : (
         <div>
           <div>{props.content}</div>
-          <button
-            onClick={() => {
-              toggleEdit(true)
-            }}
-          >
-            Edit
-          </button>
+          {props.userState.user.id === props.userId ? (
+            <button
+              onClick={() => {
+                toggleEdit(true)
+              }}
+            >
+              Edit
+            </button>
+          ) : (
+            <div></div>
+          )}
         </div>
       )}
       <div>timestamp {props.timeStamp}</div>
@@ -60,4 +75,4 @@ const PostCard = (props) => {
   )
 }
 
-export default PostCard
+export default connect(mapStateToProps, null)(PostCard)
