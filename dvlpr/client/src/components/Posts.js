@@ -17,7 +17,7 @@ const Posts = (data) => {
   return (
     <div class="sm:mx-auto text-center sm:w-1/2 ">
       <div class="mt-10 shadow rounded-lg md:w-full ">
-        <ul>
+        <div>
           {posts.map((post) => (
             <div
               class="mt-14 border text-center bg-gradient-to-b  
@@ -35,11 +35,11 @@ const Posts = (data) => {
                 timeStamp={post.createdAt}
                 comments={post.postsAndComments}
                 managePosts={managePosts}
-                post={posts}
+                posts={posts}
               />
             </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   )
