@@ -3,11 +3,30 @@ const { User, Post, Comment } = require('../models')
 const GetPosts = async (req, res) => {
   try {
     const posts = await Post.findAll({
-      include: {
-        model: Comment,
-        as: 'postsAndComments'
-        // attributes: ['id', 'userName', 'createdAt']
-      }
+      // include:
+      //   {
+      //     [
+      //       {model: Comment,
+      //       as: 'postsAndComments'},
+      //       {model: User,
+      //       as: 'postsAndUsers'}
+      //   ]
+      //     // attributes: ['id', 'userName', 'createdAt']
+      //   },
+      include: [
+        {
+          model: Comment,
+          as: 'postsAndComments',
+          include: [
+            {
+              model: User,
+              as: 'commentsAndUsers',
+              attributes: ['id', 'userName']
+            }
+          ]
+        }
+        // { model: User, as: 'postsAndUsers' }
+      ]
     })
 
     res.send(posts)

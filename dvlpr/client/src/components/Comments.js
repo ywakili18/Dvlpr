@@ -29,7 +29,7 @@ const Comments = (props) => {
         focus:border-purple-regular focus:ring-1 
         focus:ring-purple-regular md:w-full text-s"
           >
-            <li>{props.users}</li>
+            <li>{props.user}</li>
             <li>{props.comments}</li>
             <li>timestamp{props.timeStamp}</li>
           </div>
