@@ -56,12 +56,11 @@ const SignIn = (props) => {
   }
 
   return (
-    <div class="my-auto sm:mx-auto sm:w-full sm:max-w-md text-center">
-      <div class="bg-gradient-to-b to-coolGray-light from-purple-regular py-10 px-5 shadow rounded-lg sm:px-">
-        <Logo className="m-0 p-0" />
-        <h1 class="text-coolGray-light text-2xl py-10 font-bold font-brand">
-          LOG IN
-        </h1>
+    <div class=" sm:mx-auto sm:max-w-md text-center">
+      <div class=" py-20 px-5 shadow rounded-xl border border-purple-700 mt-60 ">
+        {/* Import logo below to developer feed once completed */}
+        {/* <Logo className="" /> */}
+        <h1 class="text-purple-500 text-2xl py-10  font-brand">Log in</h1>
         <form onSubmit={handleSubmit} class="mb-0 space-y-5 ">
           <div>
             <div class="mt-1 ">
@@ -71,7 +70,7 @@ const SignIn = (props) => {
                 onChange={handleChange}
                 placeholder="Email"
                 required
-                class="text-center bg-gradient-to-b from-white-regular to-coolGray-light border border-coolGray-light px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-purple-regular focus:ring-1 focus:ring-purple-regular"
+                class="text-center px-3 py-2 rounded-lg"
               />
             </div>
           </div>

@@ -2,7 +2,7 @@ import axios from 'axios'
 import Client from '../services/api'
 import { useState, useEffect } from 'react'
 import Comments from './Comments'
-
+import NewComment from './NewComment'
 const Posts = (data) => {
   const [posts, managePosts] = useState([])
   // fetch all posts
@@ -17,10 +17,9 @@ const Posts = (data) => {
   console.log('this is posts' + posts)
 
   return (
-    <div class=" sm:mt-36 sm:mx-auto text-center sm:w-1/2 ">
-      <div class="  py-2 px-8  shadow rounded-lg md:w-full ">
+    <div class="sm:mx-auto text-center sm:w-1/2 ">
+      <div class="mt-10 shadow rounded-lg md:w-full ">
         <ul>
-          <h1 class="text-purple-light text-xl font-bold font-brand ">Feed</h1>
           {posts.map((post) => (
             <div
               class="mt-14 border text-center bg-gradient-to-b  
@@ -32,6 +31,7 @@ const Posts = (data) => {
             >
               <li key={post.Id}>{post.postContent}</li>
               <li key={post.Id}>timestamp {post.createdAt}</li>
+              <NewComment />
               <div>
                 <li key={post.Id}>
                   {post.postsAndComments.map((comment) => (

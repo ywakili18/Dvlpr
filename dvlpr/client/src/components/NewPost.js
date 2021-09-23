@@ -16,7 +16,7 @@ const NewPost = (props) => {
             border border-coolGray-light resize border rounded-md
             rounded-lg shadow-sm focus:outline-none 
             focus:border-purple-regular focus:ring-1 
-            focus:ring-purple-regular xl:w-full"
+            focus:ring-purple-regular md:w-auto -ml-2"
               />
             </div>
 
@@ -26,7 +26,7 @@ const NewPost = (props) => {
               class="bg-purple-regular
                 hover:bg-pink-hot text-coolGray-light font-bold py-3 px-5 rounded-full  "
             >
-              +
+              Add post
             </button>
           </div>
         </form>

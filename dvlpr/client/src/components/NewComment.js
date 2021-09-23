@@ -2,11 +2,8 @@ import { useEffect } from 'react'
 
 const NewComment = () => {
   return (
-    <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
-      <div class="bg-gradient-to-b from-coolGray-light to-purple-light py-2 px-10 shadow rounded-lg md:w-full">
-        <h1 class="text-purple-light text-2xl font-bold font-brand">
-          New comment
-        </h1>
+    <div class="sm:mx-auto sm:w-full sm:max-w-md text-center">
+      <div>
         <form>
           <div>
             <div class="mt-10">
@@ -14,7 +11,7 @@ const NewComment = () => {
                 maxLength="255"
                 name="postContent"
                 type="text"
-                placeholder="add comment"
+                placeholder="what are your thoughts, fellow DVLPR?"
                 class="text-center bg-gradient-to-b 
                 from-white-regular to-coolGray-light 
             border border-coolGray-light py-8 px-4
