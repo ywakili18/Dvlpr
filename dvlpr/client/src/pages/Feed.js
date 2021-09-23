@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import PostCard from '../components/PostCard'
 import Posts from '../components/Posts'
 import NewPost from '../components/NewPost'
 import {
@@ -52,8 +50,6 @@ const Feed = (props) => {
         value={props.postState.newPost.postContent}
       />
       <Posts />
-
-      <PostCard />
     </div>
   )
 }
