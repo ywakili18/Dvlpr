@@ -58,7 +58,7 @@ const SignIn = (props) => {
   return (
     <div class=" sm:mx-auto sm:max-w-md text-center">
       <LoginMessage />
-      <div class=" py-20 px-5 shadow rounded-xl border border-purple-900 mt-60 ">
+      <div class="mt-20 ">
         {/* Import logo below to developer feed once completed */}
         {/* <Logo className="" /> */}
         <form onSubmit={handleSubmit} class="mb-0 space-y-5 ">

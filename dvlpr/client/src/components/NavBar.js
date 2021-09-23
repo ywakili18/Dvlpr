@@ -25,15 +25,15 @@ const NavBar = (props) => {
   let userOptions
   if (props.userState.user) {
     userOptions = (
-      <div class="space-x-10 text-right">
+      <div class="text-right -mt-7">
         <NavLink
-          className="hover:underline text-xl font-bold font-brand"
+          className="hover:text-purple-400 text-white text-xl font-bold font-brand text-purple-light m-3"
           to="/home"
         >
           Home
         </NavLink>
         <NavLink
-          className="hover:underline text-xl font-bold font-brand"
+          className="hover:text-purple-400 text-white text-xl font-bold font-brand text-purple-light m-3"
           onClick={logOut}
           to="/"
         >
@@ -44,15 +44,14 @@ const NavBar = (props) => {
   }
 
   const publicOptions = (
-    <div className="text-right -mt-10">
-      <div>
-        <NavLink
-          to="/"
-          className="hover:text-purple-400 text-white text-xl font-bold font-brand text-purple-light m-3"
-        >
-          Log In
-        </NavLink>
-      </div>
+    <div className="text-right -mt-7">
+      <NavLink
+        to="/"
+        className="hover:text-purple-400 text-white text-xl font-bold font-brand text-purple-light m-3"
+      >
+        Log In
+      </NavLink>
+
       <NavLink
         className="hover:text-purple-400 text-white text-xl font-bold font-brand  m-3"
         onClick={logOut}
