@@ -3,6 +3,7 @@ import { LogInUser } from '../services/Auth'
 import { connect } from 'react-redux'
 import { User, authenticateUser } from '../store/actions/UserActions'
 import { CheckSession } from '../services/Auth'
+import Logo from '../icons/Logo'
 
 const mapStateToProps = (state) => {
   return {
@@ -55,9 +56,12 @@ const SignIn = (props) => {
   }
 
   return (
-    <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
-      <div class="bg-gradient-to-b from-coolGray-light to-purple-light py-20 px-5 shadow rounded-lg sm:px-">
-        <h1 class="text-purple-light text-2xl font-bold font-brand">Sign In</h1>
+    <div class="my-auto sm:mx-auto sm:w-full sm:max-w-md text-center">
+      <div class="bg-gradient-to-b to-coolGray-light from-purple-regular py-10 px-5 shadow rounded-lg sm:px-">
+        <Logo className="m-0 p-0" />
+        <h1 class="text-coolGray-light text-2xl py-10 font-bold font-brand">
+          LOG IN
+        </h1>
         <form onSubmit={handleSubmit} class="mb-0 space-y-5 ">
           <div>
             <div class="mt-1 ">
