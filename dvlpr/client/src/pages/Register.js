@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { RegisterUser } from '../services/Auth'
-
+import RegisterMessage from '../components/RegisterMessage'
 const iState = {
   userName: '',
   email: '',
@@ -27,29 +27,34 @@ export default function Register(props) {
   }
   return (
     <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
-      <div class="bg-gradient-to-b from-purple-regular to-coolGray-light py-20 px-5 shadow rounded-lg sm:px-">
-        <h1 class="text-coolGray-light text-2xl font-bold font-brand py-10">
-          REGISTER
-        </h1>
+      <RegisterMessage />
+      <div class="mt-20 border-solid border-8 border-purple-400 rounded-2xl sm:py-10">
         <form onSubmit={handleSubmit} class="mb-0 space-y-5 ">
           <div>
-            <div class="mt-1">
+            <div class="mt-1 py-5">
               <input
                 onChange={handleChange}
                 name="userName"
                 type="text"
-                placeholder="User Name"
+                placeholder="Username"
                 value={formValues.userName}
                 required
-                class="text-center bg-gradient-to-b 
-              from-white-regular to-coolGray-light 
-              border border-coolGray-light px-3 py-2 
-              rounded-lg shadow-sm focus:outline-none 
-              focus:border-purple-regular focus:ring-1 
-              focus:ring-purple-regular"
+                class="
+                sm:w-60 
+                h-10  
+                focus:outline-none 
+                border 
+                border-t-0 
+                border-r-0 
+                border-l-0 
+                border-b-2
+                border-purple-400 
+                border-purple-400  
+                bg-transparent 
+                text-center"
               />
             </div>
-            <div class="mt-1">
+            <div class="mt-1 py-5">
               <input
                 onChange={handleChange}
                 name="email"
@@ -57,15 +62,22 @@ export default function Register(props) {
                 placeholder="Your Email"
                 value={formValues.email}
                 required
-                class="text-center bg-gradient-to-b 
-              from-white-regular to-coolGray-light 
-              border border-coolGray-light px-3 py-2 
-              rounded-lg shadow-sm focus:outline-none 
-              focus:border-purple-regular focus:ring-1 
-              focus:ring-purple-regular"
+                class="
+                sm:w-60 
+                h-10  
+                focus:outline-none 
+                border 
+                border-t-0 
+                border-r-0 
+                border-l-0 
+                border-b-2
+                border-purple-400 
+                border-purple-400  
+                bg-transparent 
+                text-center"
               />
             </div>
-            <div class="mt-1">
+            <div class="mt-1 py-5">
               <input
                 onChange={handleChange}
                 name="password"
@@ -73,15 +85,22 @@ export default function Register(props) {
                 placeholder="Password"
                 value={formValues.password}
                 required
-                class="text-center bg-gradient-to-b 
-              from-white-regular to-coolGray-light 
-              border border-coolGray-light px-3 py-2 
-              rounded-lg shadow-sm focus:outline-none 
-              focus:border-purple-regular focus:ring-1 
-              focus:ring-purple-regular"
+                class="
+                sm:w-60 
+                h-10  
+                focus:outline-none 
+                border 
+                border-t-0 
+                border-r-0 
+                border-l-0 
+                border-b-2
+                border-purple-400 
+                border-purple-400  
+                bg-transparent 
+                text-center"
               />
             </div>
-            <div class="mt-1">
+            <div class="mt-1 py-5">
               <input
                 onChange={handleChange}
                 name="confirmPassword"
@@ -89,12 +108,19 @@ export default function Register(props) {
                 placeholder="Confirm Password"
                 value={formValues.confirmPassword}
                 required
-                class="text-center bg-gradient-to-b 
-              from-white-regular to-coolGray-light 
-              border border-coolGray-light px-3 py-2 
-              rounded-lg shadow-sm focus:outline-none 
-              focus:border-purple-regular focus:ring-1 
-              focus:ring-purple-regular"
+                class="
+                sm:w-60 
+                h-10  
+                focus:outline-none 
+                border 
+                border-t-0 
+                border-r-0 
+                border-l-0 
+                border-b-2
+                border-purple-400 
+                border-purple-400  
+                bg-transparent 
+                text-center"
               />
             </div>
             <div class="mt-1">
@@ -105,9 +131,18 @@ export default function Register(props) {
                     ? false
                     : true
                 }
-                class="bg-purple-regular hover:bg-pink-hot text-coolGray-light font-bold py-3 px-20 rounded-full"
+                class="inline-flex 
+                items-center 
+                h-10 
+                px-5 
+                text-indigo-100 
+                transition-colors 
+                duration-150 
+                bg-indigo-700 rounded-lg 
+                focus:shadow-outline 
+                hover:bg-indigo-800 "
               >
-                Submit
+                Register
               </button>
             </div>
           </div>
