@@ -4,12 +4,12 @@ body {
   width: auto;
   height: 100vh;
   background-color: #19151a;
-  color: #8187dc;
+  color: white;
 }
 input:-webkit-autofill {
   background-color: transparent !important;
   -webkit-box-shadow: 0 0 0 50px #19151a inset;
-  -webkit-text-fill-color: #8187dc;
+  -webkit-text-fill-color: white;
 }
 input:-webkit-autofill::first-line {
   font-size: 15px;
