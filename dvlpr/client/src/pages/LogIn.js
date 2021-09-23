@@ -69,7 +69,9 @@ const SignIn = (props) => {
               onChange={handleChange}
               placeholder="Email"
               required
-              class="text-center px-3 py-2 rounded-lg"
+              class="p-4 w-80 h-10  pl-10 focus:outline-none 
+              border border-t-0 border-r-0 border-l-0 border-b-2
+              border-purple-400 border-purple-400  bg-transparent text-center"
             />
           </div>
           <div>
@@ -80,13 +82,15 @@ const SignIn = (props) => {
               onChange={handleChange}
               placeholder="Password"
               required
-              class="text-center border px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-purple-regular focus:ring-1 focus:ring-purple-regular"
+              class="p-4 w-80 h-10  pl-10 focus:outline-none 
+              border border-t-0 border-r-0 border-l-0 border-b-2
+              border-purple-400 border-purple-400  bg-transparent text-center"
             />
           </div>
           <button
             disabled={!formValues.email || !formValues.password}
             type="submit"
-            class=" hover:bg-pink-100 text-coolGray-light font-bold py-3 px-20 rounded-full"
+            class="inline-flex items-center h-10 px-5 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800"
           >
             Sign In
           </button>

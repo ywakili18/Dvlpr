@@ -6,3 +6,11 @@ body {
   background-color: #19151a;
   color: #8187dc;
 }
+input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 50px #19151a inset;
+  -webkit-text-fill-color: #8187dc;
+}
+input:-webkit-autofill::first-line {
+  font-size: 15px;
+}
