@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Comments from './Comments'
 import NewComment from './NewComment'
 import { connect } from 'react-redux'
@@ -13,6 +13,7 @@ const mapStateToProps = (state) => {
 const PostCard = (props) => {
   const [edit, toggleEdit] = useState(false)
   const [postContent, setPostContent] = useState(props.content)
+  const [deleteCheck, toggleDeleteCheck] = useState(false)
 
   const handleChange = (e) => {
     setPostContent(e.target.value)
@@ -20,11 +21,9 @@ const PostCard = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(props.id)
     const res = await Client.put(`/posts/${props.id}`, {
       postContent: postContent
     })
-    console.log(res)
     toggleEdit(false)
   }
 
@@ -49,7 +48,7 @@ const PostCard = (props) => {
         </div>
       ) : (
         <div>
-          <div>{props.content}</div>
+          <div>{postContent}</div>
           {props.userState.user.id === props.userId ? (
             <button
               onClick={() => {
