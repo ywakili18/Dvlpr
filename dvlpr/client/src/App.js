@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
 
 function App(props) {
   return (
-    <div className="App">
+    <div class="dark">
       <NavBar />
       <Switch>
         <ProtectedRoute
