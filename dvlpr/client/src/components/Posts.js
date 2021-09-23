@@ -20,12 +20,8 @@ const Posts = (data) => {
         <ul>
           {posts.map((post) => (
             <div
-              class="mt-14 border text-center bg-gradient-to-b  
-            from-white-regular to-coolGray-light 
-        border border-coolGray-light py-8 px-4
-        rounded-lg shadow-sm focus:outline-none 
-        focus:border-purple-regular focus:ring-1 
-        focus:ring-purple-regular md:w-full text-s"
+              class="
+              mt-20 border-solid border-8 border-purple-400 rounded-2xl sm:py-10"
             >
               <PostCard
                 userId={post.userId}

@@ -14,3 +14,6 @@ input:-webkit-autofill {
 input:-webkit-autofill::first-line {
   font-size: 15px;
 }
+textarea {
+  resize: none;
+}
