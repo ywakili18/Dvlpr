@@ -3,7 +3,7 @@ import Comments from './Comments'
 import NewComment from './NewComment'
 
 const PostCard = (props) => {
-  const [edit, toggleEdit] = useState(true)
+  const [edit, toggleEdit] = useState(false)
   const [postContent, setPostContent] = useState(props.content)
 
   const handleChange = (e) => {
@@ -27,24 +27,22 @@ const PostCard = (props) => {
               value={postContent}
               onChange={handleChange}
             />
+            <button type="submit">Save Edit</button>
           </form>
         </div>
       ) : (
-        <div>{props.content}</div>
+        <div>
+          <div>{props.content}</div>
+          <button
+            onClick={() => {
+              toggleEdit(true)
+            }}
+          >
+            Edit
+          </button>
+        </div>
       )}
       <div>timestamp {props.timeStamp}</div>
-      {edit ? (
-        <button
-          type="button"
-          onClick={() => {
-            toggleEdit(true)
-          }}
-        >
-          Save Edit
-        </button>
-      ) : (
-        <button type="submit">Edit</button>
-      )}
       <div>
         <div>
           {props.comments.map((comment) => (
