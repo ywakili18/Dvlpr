@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import PostCard from '../components/PostCard'
-import Comments from '../components/Comments'
 import Posts from '../components/Posts'
 import NewPost from '../components/NewPost'
 import {
@@ -47,7 +46,7 @@ const Feed = (props) => {
   return (
     <div>
       <Posts />
-      <Comments />
+
       <NewPost
         key="newPostInput"
         onChange={handleChange}

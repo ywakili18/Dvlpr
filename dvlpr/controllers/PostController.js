@@ -2,23 +2,15 @@ const { User, Post, Comment } = require('../models')
 
 const GetPosts = async (req, res) => {
   try {
-    const posts = await Post.findAll()
-    res.send(posts)
-  } catch (error) {
-    throw error
-  }
-}
-
-const GetPostsandComments = async (req, res) => {
-  try {
-    const postsAndComments = await Post.findByPk(req.params.postId, {
+    const posts = await Post.findAll({
       include: {
         model: Comment,
         as: 'postsAndComments'
+        // attributes: ['id', 'userName', 'createdAt']
       }
     })
 
-    res.send(postsAndComments)
+    res.send(posts)
   } catch (error) {
     throw error
   }
@@ -70,7 +62,6 @@ const DeletePost = async (req, res) => {
 }
 module.exports = {
   GetPosts,
-  GetPostsandComments,
   CreatePost,
   GetPostById,
   UpdatePostById,
