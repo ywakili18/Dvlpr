@@ -23,7 +23,7 @@ const Posts = (data) => {
           <h1 class="text-purple-light text-2xl font-bold font-brand">
             Posts section
           </h1>
-          {posts.map((post, index) => (
+          {posts.map((post) => (
             <div
               class="mt-10 border text-center bg-gradient-to-b 
             from-white-regular to-coolGray-light 
@@ -39,10 +39,16 @@ const Posts = (data) => {
                     key={comment.id}
                     comments={comment.commentContent}
                     timeStamp={comment.createdAt}
-                    users={comment.userName}
+                    user={comment.commentsAndUsers.userName}
                   />
                 ))}
               </li>
+
+              {/* <li key={post.Id}>
+                {post.postsAndComments.map((user) => (
+                  <Comments key={user.id} users={commentsAndUsers.userName} />
+                ))}
+              </li> */}
 
               <li key={post.Id}>timestamp {post.createdAt}</li>
             </div>
