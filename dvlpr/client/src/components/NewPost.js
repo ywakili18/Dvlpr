@@ -1,10 +1,7 @@
 const NewPost = (props) => {
   return (
-    <div class="sm:mt-36 sm:mx-auto text-center sm:w-px-48">
-      <div class=" sm:py-2 px-48 shadow rounded-s md:w-full">
-        {/* <h1 class="text-purple-light text-2xl font-bold font-brand">
-          New post
-        </h1> */}
+    <div class="sm:mt-36 sm:mx-auto text-center sm:w-1/2">
+      <div class=" sm:py-2 sm:px-48 shadow rounded-s md:w-full">
         <form onSubmit={props.onSubmit}>
           <div>
             <div>
@@ -15,11 +12,11 @@ const NewPost = (props) => {
                 placeholder="Write a post"
                 onChange={props.onChange}
                 value={props.value}
-                class="text-center  to-coolGray-light 
-            border border-coolGray-light mt-2
+                class="text-center 
+            border border-coolGray-light resize border rounded-md
             rounded-lg shadow-sm focus:outline-none 
             focus:border-purple-regular focus:ring-1 
-            focus:ring-purple-regular md:w-full text-s"
+            focus:ring-purple-regular xl:w-full"
               />
             </div>
 
@@ -27,7 +24,7 @@ const NewPost = (props) => {
             <button
               type="submit"
               class="bg-purple-regular
-                hover:bg-pink-hot text-coolGray-light font-bold py-3 px-5 rounded-full "
+                hover:bg-pink-hot text-coolGray-light font-bold py-3 px-5 rounded-full  "
             >
               +
             </button>
