@@ -4,13 +4,5 @@ body {
   width: auto;
   height: 100vh;
   background-color: #19151a;
-  color: #a400f5;
-}
-input[type='text'],
-textarea {
-  background-color: #070707;
-}
-input[type='email'],
-textarea {
-  background-color: #070707;
+  color: #8187dc;
 }

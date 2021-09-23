@@ -27,13 +27,13 @@ const NavBar = (props) => {
     userOptions = (
       <div class="space-x-10 text-right">
         <NavLink
-          className="hover:text-purple-regular text-purple-light hover:underline text-xl font-bold font-brand"
+          className="hover:underline text-xl font-bold font-brand"
           to="/home"
         >
           Home
         </NavLink>
         <NavLink
-          className="hover:text-purple-regular text-purple-light hover:underline text-xl font-bold font-brand"
+          className="hover:underline text-xl font-bold font-brand"
           onClick={logOut}
           to="/"
         >
@@ -44,17 +44,17 @@ const NavBar = (props) => {
   }
 
   const publicOptions = (
-    <div className="text-right">
+    <div className="text-right -mt-10">
       <div>
         <NavLink
           to="/"
-          className="hover:text-purple-regular hover:underline text-xl font-bold font-brand text-purple-light m-3"
+          className="hover:text-purple-400 text-white text-xl font-bold font-brand text-purple-light m-3"
         >
           Log In
         </NavLink>
       </div>
       <NavLink
-        className="hover:text-purple-regular hover:underline text-xl font-bold font-brand text-purple-light m-3"
+        className="hover:text-purple-400 text-white text-xl font-bold font-brand  m-3"
         onClick={logOut}
         to="/register"
       >
@@ -64,12 +64,12 @@ const NavBar = (props) => {
   )
 
   return (
-    <div class="">
+    <div class="mt-10">
       <NavLink
-        className="text-purple-light font-black font-brand text-3xl tracking-tighter hover:text-purple-regular px-2"
+        className="hover:text-purple-400 text-white font-bold font-brand text-3xl tracking-tighter px-8"
         to="/home"
       >
-        DVLPR
+        Dvlpr.
       </NavLink>
       {props.userState.authenticated && props.userState.user
         ? userOptions
