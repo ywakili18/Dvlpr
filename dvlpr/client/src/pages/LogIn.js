@@ -57,10 +57,10 @@ const SignIn = (props) => {
 
   return (
     <div class=" sm:mx-auto sm:max-w-md text-center">
-      <div class=" py-20 px-5 shadow rounded-xl border border-purple-700 mt-60 ">
+      <div class=" py-20 px-5 shadow rounded-xl border border-purple-900 mt-60 ">
         {/* Import logo below to developer feed once completed */}
         {/* <Logo className="" /> */}
-        <h1 class="text-purple-500 text-2xl py-10  font-brand">Log in</h1>
+        <h1 class="text-black-500 text-2xl py-10  font-brand">Log in</h1>
         <form onSubmit={handleSubmit} class="mb-0 space-y-5 ">
           <div>
             <div class="mt-1 ">
@@ -90,7 +90,7 @@ const SignIn = (props) => {
             type="submit"
             class="bg-purple-regular hover:bg-pink-hot text-coolGray-light font-bold py-3 px-20 rounded-full"
           >
-            Log In
+            Sign In
           </button>
         </form>
       </div>
