@@ -45,14 +45,14 @@ const Feed = (props) => {
 
   return (
     <div>
-      <Posts />
-
       <NewPost
         key="newPostInput"
         onChange={handleChange}
         onSubmit={handleSubmit}
         value={props.postState.newPost.postContent}
       />
+      <Posts />
+
       <PostCard />
     </div>
   )
