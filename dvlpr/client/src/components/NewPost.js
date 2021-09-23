@@ -13,10 +13,8 @@ const NewPost = (props) => {
                 onChange={props.onChange}
                 value={props.value}
                 class="text-center 
-            border border-coolGray-light resize border rounded-md
-            rounded-lg shadow-sm focus:outline-none 
-            focus:border-purple-regular focus:ring-1 
-            focus:ring-purple-regular md:w-auto -ml-2"
+            resize-none shadow-sm focus:outline-none 
+            md:w-auto -ml-2 border-t-0 border-r-0 border-l-0 border-b-2 border-purple-400 bg-transparent"
               />
             </div>
 
