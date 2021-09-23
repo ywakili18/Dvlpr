@@ -1,6 +1,7 @@
 import axios from 'axios'
 import Client from '../services/api'
 import { useState, useEffect } from 'react'
+import Comments from './Comments'
 
 const Posts = (data) => {
   const [posts, managePosts] = useState([])
@@ -13,7 +14,8 @@ const Posts = (data) => {
     }
     getPosts()
   }, [])
-  // console.log('this is' + comments)
+  console.log('this is posts' + posts)
+
   return (
     <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
       <div class="bg-gradient-to-b from-coolGray-light to-purple-light py-2 px-10 shadow rounded-lg md:w-full">
@@ -21,7 +23,7 @@ const Posts = (data) => {
           <h1 class="text-purple-light text-2xl font-bold font-brand">
             Posts section
           </h1>
-          {posts.map((post) => (
+          {posts.map((post, index) => (
             <div
               class="mt-10 border text-center bg-gradient-to-b 
             from-white-regular to-coolGray-light 
@@ -31,6 +33,17 @@ const Posts = (data) => {
         focus:ring-purple-regular md:w-full text-s"
             >
               <li key={post.Id}>{post.postContent}</li>
+              <li key={post.Id}>
+                {post.postsAndComments.map((comment) => (
+                  <Comments
+                    key={comment.id}
+                    comments={comment.commentContent}
+                    timeStamp={comment.createdAt}
+                    users={comment.userName}
+                  />
+                ))}
+              </li>
+
               <li key={post.Id}>timestamp {post.createdAt}</li>
             </div>
           ))}
