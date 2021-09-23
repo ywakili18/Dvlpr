@@ -13,7 +13,6 @@ const Posts = (data) => {
     }
     getPosts()
   }, [])
-  console.log('this is posts' + posts)
 
   return (
     <div class="sm:mx-auto text-center sm:w-1/2 ">
@@ -29,11 +28,14 @@ const Posts = (data) => {
         focus:ring-purple-regular md:w-full text-s"
             >
               <PostCard
-                key={post.Id}
-                id={post.Id}
+                userId={post.userId}
+                key={post.id}
+                id={post.id}
                 content={post.postContent}
                 timeStamp={post.createdAt}
                 comments={post.postsAndComments}
+                managePosts={managePosts}
+                post={posts}
               />
             </div>
           ))}

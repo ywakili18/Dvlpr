@@ -3,16 +3,6 @@ const { User, Post, Comment } = require('../models')
 const GetPosts = async (req, res) => {
   try {
     const posts = await Post.findAll({
-      // include:
-      //   {
-      //     [
-      //       {model: Comment,
-      //       as: 'postsAndComments'},
-      //       {model: User,
-      //       as: 'postsAndUsers'}
-      //   ]
-      //     // attributes: ['id', 'userName', 'createdAt']
-      //   },
       include: [
         {
           model: Comment,
@@ -25,7 +15,6 @@ const GetPosts = async (req, res) => {
             }
           ]
         }
-        // { model: User, as: 'postsAndUsers' }
       ]
     })
 
@@ -59,9 +48,8 @@ const GetPostById = async (req, res) => {
 }
 const UpdatePostById = async (req, res) => {
   try {
-    let postCreator = req.params.postId
     let updatedPost = await Post.update(req.body, {
-      where: { id: postCreator },
+      where: { id: req.params.postId },
       returning: true
     })
     res.send(updatedPost)
