@@ -10,12 +10,13 @@ const NewPost = (props) => {
     >
       <div
         class="
-      sm:w-1/4
+      sm:w-2/5
       rounded-2xl 
+      text-sm
       sm:mx-auto 
-      sm:py-8
+      sm:py-4
       border-purple-400
-      bg-gray-700
+      bg-gray-800
       "
       >
         <form onSubmit={props.onSubmit} class="flex items-center sm:mx-auto">
@@ -29,7 +30,8 @@ const NewPost = (props) => {
             class="
                 sm:px-2
                 sm:py-2
-                sm:ml-9
+                sm:mx-auto
+                sm:mr-4
                 focus:outline-none 
                 border 
                 border-t-0
@@ -52,8 +54,9 @@ const NewPost = (props) => {
               duration-150 
               bg-gray-600 rounded-lg 
               focus:shadow-outline 
-              hover:bg-indigo-800 ml-2
+              hover:bg-indigo-800 
               transition duration-500
+              sm:mr-20
               "
           >
             +
