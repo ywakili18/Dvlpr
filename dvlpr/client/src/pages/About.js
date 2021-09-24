@@ -1,3 +1,4 @@
+import { FaGithub } from 'react-icons/fa'
 const About = () => {
   return (
     <div>
@@ -14,6 +15,10 @@ const About = () => {
           >
             Dvlpr.
           </h2>
+          <a href="https://github.com/ywakili18/Dvlpr">
+            {' '}
+            <FaGithub className="hover:text-indigo-700 text-white text-5xl  font-bold font-brand text-purple-light m-3"></FaGithub>
+          </a>
         </div>
       </div>
     </div>
