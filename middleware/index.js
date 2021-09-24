@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
+const app = require('express')()
 
 // storing salt_rounds in environment.
 const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS)
