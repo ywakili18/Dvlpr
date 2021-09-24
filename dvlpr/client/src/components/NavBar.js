@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { User, authenticateUser } from '../store/actions/UserActions'
-
 const mapStateToProps = (state) => {
   return {
     userState: state.userState
