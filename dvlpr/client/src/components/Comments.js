@@ -29,6 +29,7 @@ const Comments = (props) => {
 
   const handleDelete = async (e) => {
     const res = await Client.delete(`/comments/${props.id}`)
+    window.location.reload()
   }
 
   return (
