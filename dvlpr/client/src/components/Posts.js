@@ -8,8 +8,8 @@ const Posts = (data) => {
   useEffect(() => {
     async function getPosts() {
       const res = await Client.get('/posts', data)
-      console.log(res)
-      managePosts(res.data)
+      const sorted = res.data.sort((a, b) => b.id - a.id)
+      managePosts(sorted)
     }
     getPosts()
   }, [])
