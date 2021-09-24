@@ -19,17 +19,7 @@ const Posts = (data) => {
       <div class="mt-10 shadow rounded-lg md:w-full ">
         <div>
           {posts.map((post) => (
-            <div
-              class="
-              mt-20 
-              border-solid 
-              border-4 
-              border-purple-400 
-              rounded-2xl 
-              sm:py-10
-              bg-purple-200
-              text-purple-500 "
-            >
+            <div>
               <PostCard
                 userId={post.userId}
                 key={post.id}

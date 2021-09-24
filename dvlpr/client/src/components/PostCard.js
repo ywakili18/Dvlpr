@@ -37,14 +37,13 @@ const PostCard = (props) => {
     <div
       // feed container
       class="
-          sm:mx-auto 
-          sm:w-full 
-          sm:max-w-md 
-          text-center 
-          text-sm 
-          border 
-          sm:py-2
-          border-black"
+      mt-20 
+      border-purple-400 
+      rounded-2xl 
+      sm:py-10
+      bg-purple-200
+      text-purple-500
+      text-sm "
     >
       {/* edit post */}
       {edit ? (
