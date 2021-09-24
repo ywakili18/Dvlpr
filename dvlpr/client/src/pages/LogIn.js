@@ -56,8 +56,9 @@ const SignIn = (props) => {
   }
 
   return (
-    <div class=" sm:mx-auto  sm:max-w-md text-center">
+    <div class="sm:mx-auto  sm:max-w-md text-center">
       <LoginMessage />
+
       <div class="mt-20 border-solid border-8 border-purple-400 rounded-2xl sm:py-10">
         {/* Import logo below to developer feed once completed */}
         {/* <Logo className="" /> */}
