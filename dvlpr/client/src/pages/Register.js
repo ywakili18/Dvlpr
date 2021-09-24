@@ -1,6 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { RegisterUser } from '../services/Auth'
 import RegisterMessage from '../components/RegisterMessage'
+import { CheckSession } from '../services/Auth'
+import { User, authenticateUser } from '../store/actions/UserActions'
+import { connect } from 'react-redux'
+
 const iState = {
   userName: '',
   email: '',
@@ -8,8 +12,35 @@ const iState = {
   confirmPassword: ''
 }
 
-export default function Register(props) {
+const mapStateToProps = (state) => {
+  return {
+    userState: state.userState
+  }
+}
+
+const mapActionsToProps = (dispatch) => {
+  return {
+    setUser: (user) => dispatch(User(user)),
+    authUser: (toggle) => dispatch(authenticateUser(toggle))
+  }
+}
+
+const Register = (props) => {
   const [formValues, setFormValues] = useState(iState)
+
+  const checkToken = async () => {
+    const session = await CheckSession()
+    props.setUser(session)
+    props.authUser(true)
+    props.history.push('/home')
+  }
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken()
+    }
+  }, [])
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
@@ -153,3 +184,5 @@ export default function Register(props) {
     </div>
   )
 }
+
+export default connect(mapStateToProps, mapActionsToProps)(Register)
