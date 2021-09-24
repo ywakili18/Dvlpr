@@ -3,7 +3,6 @@ import { LogInUser } from '../services/Auth'
 import { connect } from 'react-redux'
 import { User, authenticateUser } from '../store/actions/UserActions'
 import { CheckSession } from '../services/Auth'
-import Logo from '../icons/Logo'
 import LoginMessage from '../components/LoginMessage'
 const mapStateToProps = (state) => {
   return {
@@ -59,7 +58,7 @@ const SignIn = (props) => {
     <div class="sm:mx-auto  sm:max-w-md text-center">
       <LoginMessage />
 
-      <div class="mt-20 border-solid border-8 border-purple-400 rounded-2xl sm:py-10">
+      <div class="mt-20 border-solid border-8 border-purple-400 rounded-2xl sm:py-10 ">
         {/* Import logo below to developer feed once completed */}
         {/* <Logo className="" /> */}
         <form onSubmit={handleSubmit} class="mb-0 space-y-5 ">
@@ -120,7 +119,8 @@ const SignIn = (props) => {
             duration-150 
             bg-indigo-700 rounded-lg 
             focus:shadow-outline 
-            hover:bg-indigo-800 "
+            hover:bg-indigo-800
+            "
           >
             Sign In
           </button>
