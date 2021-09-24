@@ -14,8 +14,8 @@ const NewPost = (props) => {
       rounded-2xl 
       sm:mx-auto 
       sm:py-8
-      sm:border-8 
       border-purple-400
+      bg-gray-700
       "
       >
         <form onSubmit={props.onSubmit} class="flex items-center sm:mx-auto">
@@ -31,9 +31,12 @@ const NewPost = (props) => {
                 sm:py-2
                 sm:ml-9
                 focus:outline-none 
-                rounded-lg 
                 border 
-                border-purple-400  
+                border-t-0
+                border-l-0
+                border-r-0
+                border-b-2
+                border-purple-500  
                 b
                 bg-transparent 
                 text-center
