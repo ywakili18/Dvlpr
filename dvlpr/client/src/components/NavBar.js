@@ -27,13 +27,13 @@ const NavBar = (props) => {
     userOptions = (
       <div class="text-right -mt-7">
         <NavLink
-          className="hover:text-purple-400 text-white text-xl font-bold font-brand text-purple-light m-3"
+          className="hover:text-indigo-700 text-white text-xl font-bold font-brand text-purple-light m-3"
           to="/home"
         >
           Home
         </NavLink>
         <NavLink
-          className="hover:text-purple-400 text-white text-xl font-bold font-brand text-purple-light m-3"
+          className="hover:text-indigo-700 text-white text-xl font-bold font-brand text-purple-light m-3"
           onClick={logOut}
           to="/"
         >
@@ -47,13 +47,13 @@ const NavBar = (props) => {
     <div className="text-right -mt-7">
       <NavLink
         to="/"
-        className="hover:text-purple-400 text-white text-xl font-bold font-brand text-purple-light m-3"
+        className="hover:text-indigo-700 text-white text-xl font-bold font-brand text-purple-light m-3"
       >
         Log In
       </NavLink>
 
       <NavLink
-        className="hover:text-purple-400 text-white text-xl font-bold font-brand  m-3"
+        className="hover:text-indigo-700 text-white text-xl font-bold font-brand  m-3"
         onClick={logOut}
         to="/register"
       >
@@ -65,7 +65,7 @@ const NavBar = (props) => {
   return (
     <div class="mt-10">
       <NavLink
-        className="hover:text-purple-400 text-white font-bold font-brand text-3xl tracking-tighter px-8"
+        className="hover:text-indigo-700 text-white font-bold font-brand text-3xl tracking-tighter px-8"
         to="/home"
       >
         Dvlpr.

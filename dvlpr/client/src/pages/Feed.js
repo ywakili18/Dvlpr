@@ -49,7 +49,13 @@ const Feed = (props) => {
         onSubmit={handleSubmit}
         value={props.postState.newPost.postContent}
       />
-      <Posts />
+      <div className="border-4  mt-20 border-indigo-700 ">
+        <div className="bg-gray-900 shadow-2xl">
+          <div classname="">
+            <Posts />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

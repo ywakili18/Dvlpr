@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import Comments from './Comments'
 import NewComment from './NewComment'
+import Comments from './Comments'
 import { connect } from 'react-redux'
 import Client from '../services/api'
 import Moment from 'react-moment'
+import { BiCommentEdit, BiCommentMinus, BiBadgeCheck } from 'react-icons/bi'
+
 import 'moment-timezone'
 const mapStateToProps = (state) => {
   return {
@@ -35,25 +37,12 @@ const PostCard = (props) => {
   }
 
   return (
-    <div
-      // feed container
-      class="
-      mt-20 
-      border-purple-400 
-      rounded-2xl 
-      sm:py-10
-      bg-purple-200
-      text-purple-500
-      text-sm "
-    >
+    <div class="text-left">
       {/* edit post */}
       {edit ? (
         <div>
-          <form
-            class="mt-10 flex items-center sm:mx-auto border"
-            onSubmit={handleSubmit}
-          >
-            <textarea
+          <form onSubmit={handleSubmit}>
+            <input
               maxLength="255"
               name="postContent"
               placeholder="edit your post here"
@@ -61,40 +50,31 @@ const PostCard = (props) => {
               values={postContent}
               onChange={handleChange}
               class="
-              w-1/2
-              text-gray-900
-                sm:px-2
-                sm:py-2
+              text-white
                 sm:mx-auto
-                sm:mr-4
                 focus:outline-none 
-                border 
-                border-t-0
-                border-l-0
-                border-r-0
-                border-b-2
-                rounded-lg   
-                border-purple-500  
-                bg-white 
+                bg-transparent 
                 text-center
+                text-purple-300
                 "
             />
             {/* save edit button */}
             {props.userState.user.id === props.userId ? (
               <button
-                class="h-8
-                  px-4 
-                  text-indigo-100 
-                  transition-colors 
-                  duration-150 
-                  bg-gray-400 rounded-lg 
-                  focus:shadow-outline 
-                  hover:bg-purple-800 
-                  transition duration-500
-                  sm:mr-20"
+                class="  
+              h-8
+              p-2
+              px-8   
+              text-indigo-100 
+              transition-colors 
+              duration-150 
+              bg-gray-400 rounded-lg 
+              focus:shadow-outline 
+              hover:bg-purple-800 
+              transition duration-500"
                 type="submit"
               >
-                Save edit
+                <BiBadgeCheck />
               </button>
             ) : (
               <div></div>
@@ -103,46 +83,26 @@ const PostCard = (props) => {
         </div>
       ) : (
         <div>
-          <div
-            class=" w-1/2
-                text-purple-100
-                sm:px-2
-                sm:py-2
-                sm:mx-auto
-                focus:outline-none 
-                border 
-                border-t-2
-                border-l-2
-                border-r-2
-                border-b-2
-                rounded-lg   
-                bg-gray-400 
-                italic
-                text-center
-                "
-          >
-            {postContent}
-          </div>
+          <div class="text-indigo-300 italic">{postContent}</div>
           {props.userState.user.id === props.userId ? (
             <div>
               <button
                 class="
                 h-8
-                px-6
-                mt-2
+                p-2
+                px-8   
                 text-indigo-100 
                 transition-colors 
                 duration-150 
                 bg-gray-400 rounded-lg 
                 focus:shadow-outline 
                 hover:bg-purple-800 
-                transition duration-500
-                sm:mx-auto"
+                transition duration-500"
                 onClick={() => {
                   toggleEdit(true)
                 }}
               >
-                Edit Post
+                <BiCommentEdit />
               </button>
               {deleteCheck ? (
                 <div>
@@ -157,15 +117,15 @@ const PostCard = (props) => {
                   <button
                     class="
                     h-8
-                    px-4 
+                    p-2
+                    px-8   
                     text-indigo-100 
                     transition-colors 
                     duration-150 
                     bg-gray-400 rounded-lg 
                     focus:shadow-outline 
                     hover:bg-purple-800 
-                    transition duration-500
-                    sm:mx-auto"
+                    transition duration-500 text-md italic"
                     type="button"
                     onClick={handleDelete}
                   >
@@ -175,8 +135,10 @@ const PostCard = (props) => {
               ) : (
                 <button
                   type="button"
-                  class="h-8
-                  px-4 
+                  class=" 
+                  h-8
+                  p-2
+                  px-8   
                   text-indigo-100 
                   transition-colors 
                   duration-150 
@@ -189,7 +151,7 @@ const PostCard = (props) => {
                     toggleDeleteCheck(true)
                   }}
                 >
-                  Delete Post
+                  <BiCommentMinus />
                 </button>
               )}
             </div>
@@ -200,7 +162,7 @@ const PostCard = (props) => {
       )}
       <div class="py-2 italic content-center">
         {/* timestamp */}
-        <p className="text-sm text-center">Created At</p>
+        @
         <Moment
           date={props.timeStamp}
           format="MM-DD-YYYY hh:mm:ss"
@@ -218,9 +180,10 @@ const PostCard = (props) => {
               user={comment.commentsAndUsers.userName}
             />
           ))}
+          <div className="bg-gray-900 shadow-2xl">
+            <NewComment />
+          </div>
         </div>
-        <div></div>
-        <NewComment />
       </div>
     </div>
   )
