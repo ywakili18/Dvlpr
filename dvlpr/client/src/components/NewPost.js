@@ -20,16 +20,15 @@ const NewPost = (props) => {
       >
         <form onSubmit={props.onSubmit} class="flex items-center sm:mx-auto">
           <textarea
-            maxLength="255"
             name="postContent"
             type="text"
             placeholder="Write a post"
             onChange={props.onChange}
             value={props.value}
             class="
-              text-gray-900
-                sm:px-2
-                sm:py-2
+                text-gray-900
+                sm:px-14
+                sm:py-4
                 sm:mx-auto
                 sm:mr-16
                 focus:outline-none 
