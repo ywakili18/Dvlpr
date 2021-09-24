@@ -3,7 +3,8 @@ import Comments from './Comments'
 import NewComment from './NewComment'
 import { connect } from 'react-redux'
 import Client from '../services/api'
-
+import Moment from 'react-moment'
+import 'moment-timezone'
 const mapStateToProps = (state) => {
   return {
     userState: state.userState
@@ -198,7 +199,9 @@ const PostCard = (props) => {
           )}
         </div>
       )}
-      <div>timestamp {props.timeStamp}</div>
+      <div>
+        <Moment date={props.timeStamp} />
+      </div>
       <div>
         <div>
           {props.comments.map((comment) => (
