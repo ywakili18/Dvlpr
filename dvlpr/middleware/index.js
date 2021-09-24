@@ -52,6 +52,12 @@ const stripToken = (req, res, next) => {
     res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
   }
 }
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client/build')))
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(`${__dirname}/client/build/index.html`))
+  })
+}
 
 module.exports = {
   stripToken,
