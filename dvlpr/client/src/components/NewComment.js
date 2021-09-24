@@ -18,6 +18,7 @@ const NewComment = (props) => {
       postId: props.postId,
       commentContent: newComment
     })
+    window.location.reload()
   }
 
   const handleChange = (e) => {
