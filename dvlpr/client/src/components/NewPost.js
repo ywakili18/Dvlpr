@@ -16,7 +16,7 @@ const NewPost = (props) => {
       sm:mx-auto 
       sm:py-4
       border-purple-400
-      bg-gray-800
+      bg-gray-100
       "
       >
         <form onSubmit={props.onSubmit} class="flex items-center sm:mx-auto">
@@ -28,6 +28,7 @@ const NewPost = (props) => {
             onChange={props.onChange}
             value={props.value}
             class="
+              text-gray-900
                 sm:px-2
                 sm:py-2
                 sm:mx-auto
@@ -52,7 +53,7 @@ const NewPost = (props) => {
               text-indigo-100 
               transition-colors 
               duration-150 
-              bg-gray-600 rounded-lg 
+              bg-gray-500 rounded-lg 
               focus:shadow-outline 
               hover:bg-indigo-800 
               transition duration-500

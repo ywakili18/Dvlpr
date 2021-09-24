@@ -12,12 +12,16 @@ const NewComment = () => {
                 name="postContent"
                 type="text"
                 placeholder="what are your thoughts, fellow DVLPR?"
-                class="text-center bg-gradient-to-b 
-                from-white-regular to-coolGray-light 
-            border border-coolGray-light py-8 px-4
-            rounded-lg shadow-sm focus:outline-none 
-            focus:border-purple-regular focus:ring-1 
-            focus:ring-purple-regular md:w-full text-s"
+                class="
+                text-center 
+                border 
+                border-purple-400 
+                py-8 
+                px-4
+                rounded-lg shadow-sm focus:outline-none 
+                focus:ring-1 
+                md:w-full 
+                text-s"
               />
             </div>
 
