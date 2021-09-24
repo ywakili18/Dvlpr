@@ -26,20 +26,21 @@ export default function Register(props) {
     props.history.push('/login')
   }
   return (
-    <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
-      <RegisterMessage />
-      <div class="mt-20 border-solid border-8 border-purple-400 rounded-2xl sm:py-10">
-        <form onSubmit={handleSubmit} class="mb-0 space-y-5 ">
-          <div>
-            <div class="mt-1 py-5">
-              <input
-                onChange={handleChange}
-                name="userName"
-                type="text"
-                placeholder="Username"
-                value={formValues.userName}
-                required
-                class="
+    <div>
+      <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-md text-center">
+        <RegisterMessage />
+        <div class="mt-20 border-solid border-8 border-purple-400 rounded-2xl sm:py-10">
+          <form onSubmit={handleSubmit} class="mb-0 space-y-5 ">
+            <div>
+              <div class="mt-1 py-5">
+                <input
+                  onChange={handleChange}
+                  name="userName"
+                  type="text"
+                  placeholder="Username"
+                  value={formValues.userName}
+                  required
+                  class="
                 sm:w-60 
                 h-10  
                 focus:outline-none 
@@ -52,17 +53,17 @@ export default function Register(props) {
                 border-purple-400  
                 bg-transparent 
                 text-center"
-              />
-            </div>
-            <div class="mt-1 py-5">
-              <input
-                onChange={handleChange}
-                name="email"
-                type="text"
-                placeholder="Your Email"
-                value={formValues.email}
-                required
-                class="
+                />
+              </div>
+              <div class="mt-1 py-5">
+                <input
+                  onChange={handleChange}
+                  name="email"
+                  type="text"
+                  placeholder="Your Email"
+                  value={formValues.email}
+                  required
+                  class="
                 sm:w-60 
                 h-10  
                 focus:outline-none 
@@ -75,17 +76,17 @@ export default function Register(props) {
                 border-purple-400  
                 bg-transparent 
                 text-center"
-              />
-            </div>
-            <div class="mt-1 py-5">
-              <input
-                onChange={handleChange}
-                name="password"
-                type="password"
-                placeholder="Password"
-                value={formValues.password}
-                required
-                class="
+                />
+              </div>
+              <div class="mt-1 py-5">
+                <input
+                  onChange={handleChange}
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  value={formValues.password}
+                  required
+                  class="
                 sm:w-60 
                 h-10  
                 focus:outline-none 
@@ -98,17 +99,17 @@ export default function Register(props) {
                 border-purple-400  
                 bg-transparent 
                 text-center"
-              />
-            </div>
-            <div class="mt-1 py-5">
-              <input
-                onChange={handleChange}
-                name="confirmPassword"
-                type="password"
-                placeholder="Confirm Password"
-                value={formValues.confirmPassword}
-                required
-                class="
+                />
+              </div>
+              <div class="mt-1 py-5">
+                <input
+                  onChange={handleChange}
+                  name="confirmPassword"
+                  type="password"
+                  placeholder="Confirm Password"
+                  value={formValues.confirmPassword}
+                  required
+                  class="
                 sm:w-60 
                 h-10  
                 focus:outline-none 
@@ -121,17 +122,17 @@ export default function Register(props) {
                 border-purple-400  
                 bg-transparent 
                 text-center"
-              />
-            </div>
-            <div class="mt-1">
-              <button
-                type="submit"
-                disabled={
-                  formValues.confirmPassword === formValues.password
-                    ? false
-                    : true
-                }
-                class="inline-flex 
+                />
+              </div>
+              <div class="mt-1">
+                <button
+                  type="submit"
+                  disabled={
+                    formValues.confirmPassword === formValues.password
+                      ? false
+                      : true
+                  }
+                  class="inline-flex 
                 items-center 
                 h-10 
                 px-5 
@@ -141,12 +142,13 @@ export default function Register(props) {
                 bg-indigo-700 rounded-lg 
                 focus:shadow-outline 
                 hover:bg-indigo-800 "
-              >
-                Register
-              </button>
+                >
+                  Register
+                </button>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   )

@@ -6,7 +6,6 @@ import LogIn from './pages/LogIn'
 import Feed from './pages/Feed'
 import ProtectedRoute from './components/ProtectedRoute'
 import { connect } from 'react-redux'
-
 const mapStateToProps = (state) => {
   return {
     userState: state.userState

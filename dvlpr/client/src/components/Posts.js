@@ -21,7 +21,7 @@ const Posts = (data) => {
           {posts.map((post) => (
             <div
               class="
-              mt-20 border-solid border-8 border-purple-400 rounded-2xl sm:py-10"
+              mt-20 border-solid border-8 border-purple-400 rounded-2xl sm:py-10 "
             >
               <PostCard
                 userId={post.userId}
