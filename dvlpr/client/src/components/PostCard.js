@@ -1,9 +1,12 @@
-import { useState } from 'react'
-import Comments from './Comments'
+import { useState, useEffect } from 'react'
 import NewComment from './NewComment'
+import Comments from './Comments'
 import { connect } from 'react-redux'
 import Client from '../services/api'
+import Moment from 'react-moment'
+import { BiCommentEdit, BiCommentMinus, BiBadgeCheck } from 'react-icons/bi'
 
+import 'moment-timezone'
 const mapStateToProps = (state) => {
   return {
     userState: state.userState
@@ -13,6 +16,7 @@ const mapStateToProps = (state) => {
 const PostCard = (props) => {
   const [edit, toggleEdit] = useState(false)
   const [postContent, setPostContent] = useState(props.content)
+  const [postComments, setPostComments] = useState(props.comments)
   const [deleteCheck, toggleDeleteCheck] = useState(false)
 
   const handleChange = (e) => {
@@ -29,77 +33,167 @@ const PostCard = (props) => {
 
   const handleDelete = async (e) => {
     const res = await Client.delete(`/posts/${props.id}`)
-    console.log(res)
-    window.location.reload()
+    props.toggleupdate(() => {
+      return props.update ? false : true
+    })
   }
 
   return (
-    <div>
+    <div class="text-center">
       {edit ? (
         <div>
           <form onSubmit={handleSubmit}>
-            <textarea
+            <input
               maxLength="255"
-              name="postContent"
+              name="commentContent"
+              placeholder="edit your Post here"
               type="text"
               value={postContent}
               onChange={handleChange}
+              class="
+              text-white
+                sm:mx-auto
+                focus:outline-none 
+                bg-transparent 
+                text-center
+                text-purple-300
+                "
             />
             {props.userState.user.id === props.userId ? (
-              <button type="submit">Save Edit</button>
+              <button
+                class="  
+              h-8
+              p-2
+              px-8   
+              text-indigo-100 
+              transition-colors 
+              duration-150 
+              bg-gray-400 rounded-lg 
+              focus:shadow-outline 
+              hover:bg-purple-800 
+              transition duration-500"
+                type="submit"
+              >
+                <BiBadgeCheck />
+              </button>
             ) : (
               <div></div>
             )}
           </form>
         </div>
       ) : (
-        <div>
-          <div>{postContent}</div>
+        <div class="border rounded-xl bg-gray-700">
+          <div class="text-indigo-300 italic text-sm">{postContent}</div>
           {props.userState.user.id === props.userId ? (
             <div>
               <button
+                class="
+                h-8
+                p-2
+                px-8   
+                text-indigo-100 
+                transition-colors 
+                duration-150 
+                bg-gray-400 rounded-lg 
+                focus:shadow-outline 
+                hover:bg-purple-800 
+                transition duration-500"
                 onClick={() => {
                   toggleEdit(true)
                 }}
               >
-                Edit
+                <BiCommentEdit />
               </button>
               {deleteCheck ? (
                 <div>
-                  <div>Are You Sure?</div>
-                  <button type="button" onClick={handleDelete}>
-                    DELETE
+                  <div
+                    class="
+                  text-black italic font-bold
+                  sm:px-2
+                  sm:py-4
+                  sm:mx-auto
+                  text-center"
+                  ></div>
+                  <button
+                    class="
+                    h-8
+                    p-2
+                    px-8   
+                    text-indigo-100 
+                    transition-colors 
+                    duration-150 
+                    bg-gray-400 rounded-lg 
+                    focus:shadow-outline 
+                    hover:bg-purple-800 
+                    transition duration-500 text-md italic"
+                    type="button"
+                    onClick={handleDelete}
+                  >
+                    Confirm to delete
                   </button>
                 </div>
               ) : (
                 <button
                   type="button"
+                  class=" 
+                  h-8
+                  p-2
+                  px-8   
+                  text-indigo-100 
+                  transition-colors 
+                  duration-150 
+                  bg-gray-400 rounded-lg 
+                  focus:shadow-outline 
+                  hover:bg-purple-800 
+                  transition duration-500
+                  "
                   onClick={() => {
                     toggleDeleteCheck(true)
                   }}
                 >
-                  Delete Post
+                  <BiCommentMinus />
                 </button>
               )}
             </div>
           ) : (
             <div></div>
           )}
+          <div class="py-2 italic content-center text-xs">
+            Post Created @
+            <Moment
+              date={props.timeStamp}
+              format="MM-DD-YYYY hh:mm:ss"
+              tz="America/Los_Angeles"
+            />
+          </div>
         </div>
       )}
-      <div>timestamp {props.timeStamp}</div>
+
       <div>
         <div>
-          {props.comments.map((comment) => (
+          {postComments.map((comment) => (
             <Comments
               key={comment.id}
+              id={comment.id}
               comments={comment.commentContent}
               timeStamp={comment.createdAt}
               user={comment.commentsAndUsers.userName}
+              userId={comment.commentsAndUsers.id}
+              toggleupdate={props.toggleupdate}
+              update={props.update}
             />
           ))}
+          <div className="bg-gray-900 shadow-2xl mt-14">
+            <NewComment
+              comments={postComments}
+              addNewComment={setPostComments}
+              postId={props.id}
+              userId={props.userState.user.id}
+              toggleupdate={props.toggleupdate}
+              update={props.update}
+            />
+          </div>
         </div>
-        <NewComment />
       </div>
     </div>
   )

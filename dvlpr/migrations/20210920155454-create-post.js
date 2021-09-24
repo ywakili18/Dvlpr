@@ -17,13 +17,15 @@ module.exports = {
         },
         allowNull: false
       },
+
       postContent: {
         type: Sequelize.STRING,
         allowNull: false
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: 'TIMESTAMP',
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       },
       updatedAt: {
         allowNull: false,

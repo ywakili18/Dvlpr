@@ -1,32 +1,73 @@
-import { useEffect } from 'react'
+import { FaCommentDots } from 'react-icons/fa'
+import { useState } from 'react'
+import Client from '../services/api'
+import { connect } from 'react-redux'
 
-const NewComment = () => {
+const mapStateToProps = (state) => {
+  return {
+    userState: state.userState
+  }
+}
+
+const NewComment = (props) => {
+  const [newComment, setNewComment] = useState('')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const res = await Client.post(`/comments/${props.userId}`, {
+      postId: props.postId,
+      commentContent: newComment
+    })
+    window.location.reload()
+  }
+
+  const handleChange = (e) => {
+    setNewComment(e.target.value)
+  }
+
   return (
-    <div class="sm:mx-auto sm:w-full sm:max-w-md text-center">
+    <div
+      class="
+      
+      sm:mx-auto 
+      text-center 
+      border rounded-lg"
+    >
       <div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div>
-            <div class="mt-10">
-              <textarea
+            <div class="text-md sm:mx-auto">
+              <input
+                onChange={handleChange}
+                value={newComment}
                 maxLength="255"
                 name="postContent"
                 type="text"
-                placeholder="what are your thoughts, fellow DVLPR?"
-                class="text-center bg-gradient-to-b 
-                from-white-regular to-coolGray-light 
-            border border-coolGray-light py-8 px-4
-            rounded-lg shadow-sm focus:outline-none 
-            focus:border-purple-regular focus:ring-1 
-            focus:ring-purple-regular md:w-full text-s"
+                placeholder="what are your thoughts?"
+                class="
+                sm:mx-auto
+                focus:outline-none 
+                bg-transparent 
+                text-purple-300
+                flex-grow h-16"
               />
-            </div>
 
-            <div class="mt-1">
               <button
                 type="submit"
-                class="bg-purple-regular  hover:bg-pink-hot text-coolGray-light font-bold py-3 px-5 rounded-full"
+                class="
+                h-8
+                p-2
+                px-8   
+                text-indigo-100 
+                transition-colors 
+                duration-150 
+                bg-gray-400 rounded-lg 
+                focus:shadow-outline 
+                hover:bg-purple-800 
+                transition duration-500
+                "
               >
-                +
+                <FaCommentDots />
               </button>
             </div>
           </div>
@@ -35,4 +76,4 @@ const NewComment = () => {
     </div>
   )
 }
-export default NewComment
+export default connect(mapStateToProps, null)(NewComment)

@@ -5,6 +5,7 @@ import Register from './pages/Register'
 import LogIn from './pages/LogIn'
 import Feed from './pages/Feed'
 import ProtectedRoute from './components/ProtectedRoute'
+import About from './pages/About'
 import { connect } from 'react-redux'
 const mapStateToProps = (state) => {
   return {
@@ -24,6 +25,7 @@ function App(props) {
           component={Feed}
         />
         <Route exact path="/home" component={Feed} />
+        <Route exact path="/about" component={About} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/" component={LogIn} />
       </Switch>

@@ -3,17 +3,38 @@ body {
   padding: 0;
   width: auto;
   height: 100vh;
-  background-color: #19151a;
+  background-color: #000000;
   color: white;
 }
 input:-webkit-autofill {
   background-color: transparent !important;
-  -webkit-box-shadow: 0 0 0 50px #19151a inset;
-  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0 50px #f3f0f4 inset;
+  -webkit-text-fill-color: rgb(9, 9, 9);
 }
 input:-webkit-autofill::first-line {
   font-size: 15px;
 }
 textarea {
   resize: none;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+input {
+  width: 50%;
+}
+h2 {
+  overflow: hidden;
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: typing 1s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
