@@ -1,26 +1,14 @@
-import Client from '../services/api'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import PostCard from './PostCard'
 
-const Posts = (data) => {
-  const [posts, managePosts] = useState([])
+const Posts = (props) => {
   const [time, manageTime] = useState([])
-  // fetch all posts
-  useEffect(() => {
-    async function getPosts() {
-      const res = await Client.get('/posts', data)
-      const sorted = res.data.sort((a, b) => b.id - a.id)
-      console.log(res.data)
-      managePosts(sorted)
-    }
-    getPosts()
-  }, [])
 
   return (
     <div class="sm:mx-auto text-center sm:w-1/2 ">
       <div class="shadow rounded-lg md:w-full ">
         <div>
-          {posts.map((post) => (
+          {props.posts.map((post) => (
             <div>
               <PostCard
                 userId={post.userId}
@@ -29,8 +17,10 @@ const Posts = (data) => {
                 content={post.postContent}
                 timeStamp={post.createdAt}
                 comments={post.postsAndComments}
-                managePosts={managePosts}
-                posts={posts}
+                managePosts={props.managePosts}
+                posts={props.posts}
+                toggleupdate={props.toggleupdate}
+                update={props.update}
               />
             </div>
           ))}

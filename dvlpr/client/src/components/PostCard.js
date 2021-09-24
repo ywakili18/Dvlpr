@@ -33,7 +33,9 @@ const PostCard = (props) => {
   const handleDelete = async (e) => {
     const res = await Client.delete(`/posts/${props.id}`)
     console.log(res)
-    window.location.reload()
+    props.toggleupdate(() => {
+      return props.update ? false : true
+    })
   }
 
   return (
