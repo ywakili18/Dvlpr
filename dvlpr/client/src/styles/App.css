@@ -3,13 +3,13 @@ body {
   padding: 0;
   width: auto;
   height: 100vh;
-  background-color: #19151a;
+  background-color: #000000;
   color: white;
 }
 input:-webkit-autofill {
   background-color: transparent !important;
-  -webkit-box-shadow: 0 0 0 50px #19151a inset;
-  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0 50px #f3f0f4 inset;
+  -webkit-text-fill-color: rgb(9, 9, 9);
 }
 input:-webkit-autofill::first-line {
   font-size: 15px;

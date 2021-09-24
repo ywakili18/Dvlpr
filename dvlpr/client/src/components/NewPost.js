@@ -13,7 +13,7 @@ const NewPost = (props) => {
       text-md
       sm:mx-auto 
       sm:py-4
-      bg-gray-600
+      bg-gray-900
       justify-between w-screen items-center
       "
       >
@@ -31,7 +31,6 @@ const NewPost = (props) => {
                 bg-transparent 
                 text-center
                 text-purple-300
-                flex-grow h-16
                 "
           />
           <button
