@@ -33,10 +33,13 @@ const Comments = (props) => {
   }
 
   return (
-    <div class="">
+    <div>
       <div>
-        <div class="">
-          <div>{props.user}</div>
+        <div class="border rounded-xl sm:mt-10 bg-gray-700">
+          <p class="italic text-sm">comment section</p>
+          <div class="text-indigo-300 font-bold italic text-2xl">
+            @{props.user}
+          </div>
           {edit ? (
             <div>
               <form onSubmit={handleSubmit}>
@@ -48,7 +51,7 @@ const Comments = (props) => {
                   value={commentContent}
                   onChange={handleChange}
                   class="
-              text-white
+                text-white
                 sm:mx-auto
                 focus:outline-none 
                 bg-transparent 
@@ -80,7 +83,7 @@ const Comments = (props) => {
             </div>
           ) : (
             <div>
-              <div class="text-indigo-300 italic">{commentContent}</div>
+              <div class="text-indigo-300 italic text-sm">{commentContent}</div>
               {props.userState.user.id === props.userId ? (
                 <div>
                   <button
@@ -159,8 +162,8 @@ const Comments = (props) => {
           )}
           {/* <div>{commentContent}</div> */}
 
-          <div class="py-2 italic content-center">
-            @
+          <div class="py-2 italic content-center text-xs">
+            Comment Created @
             <Moment
               date={props.timeStamp}
               format="MM-DD-YYYY hh:mm:ss"
