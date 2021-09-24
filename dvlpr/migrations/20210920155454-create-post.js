@@ -17,6 +17,7 @@ module.exports = {
         },
         allowNull: false
       },
+
       postContent: {
         type: Sequelize.STRING,
         allowNull: false

@@ -19,3 +19,6 @@ textarea {
   overflow: hidden;
   word-wrap: break-word;
 }
+input {
+  width: 50%;
+}
