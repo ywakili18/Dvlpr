@@ -46,7 +46,7 @@ const NavBar = (props) => {
   const publicOptions = (
     <div className="text-right -mt-7">
       <NavLink
-        to="/"
+        to="/home"
         className="hover:text-indigo-700 text-white text-xl font-bold font-brand text-purple-light m-3"
       >
         Log In
@@ -66,9 +66,15 @@ const NavBar = (props) => {
     <div class="mt-10">
       <NavLink
         className="hover:text-indigo-700 text-white font-bold font-brand text-3xl tracking-tighter px-8"
-        to="/home"
+        to="/"
       >
         Dvlpr.
+      </NavLink>
+      <NavLink
+        className="hover:text-indigo-700 text-white font-bold font-brand text-3xl tracking-tighter px-8"
+        to="/about"
+      >
+        About
       </NavLink>
       {props.userState.authenticated && props.userState.user
         ? userOptions
