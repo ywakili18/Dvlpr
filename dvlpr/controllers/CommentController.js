@@ -20,7 +20,7 @@ const CreateComment = async (req, res) => {
   try {
     let commentCreator = parseInt(req.params.userId)
     let commentBody = {
-      commentCreator,
+      userId: commentCreator,
       ...req.body
     }
     let comment = await Comment.create(commentBody)

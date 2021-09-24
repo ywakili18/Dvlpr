@@ -11,7 +11,7 @@ Router.get(
 )
 
 Router.post(
-  '/',
+  '/:userId',
   middleware.stripToken,
   middleware.verifyToken,
   controller.CreateComment
