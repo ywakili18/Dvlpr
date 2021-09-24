@@ -1,6 +1,29 @@
 import { FaCommentDots } from 'react-icons/fa'
+import { useState } from 'react'
+import Client from '../services/api'
+import { connect } from 'react-redux'
 
-const NewComment = () => {
+const mapStateToProps = (state) => {
+  return {
+    userState: state.userState
+  }
+}
+
+const NewComment = (props) => {
+  const [newComment, setNewComment] = useState('')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const res = await Client.post(`/comments/${props.userId}`, {
+      postId: props.postId,
+      commentContent: newComment
+    })
+  }
+
+  const handleChange = (e) => {
+    setNewComment(e.target.value)
+  }
+
   return (
     <div
       class="
@@ -10,10 +33,12 @@ const NewComment = () => {
       border rounded-lg"
     >
       <div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div>
             <div class="text-md sm:mx-auto">
               <input
+                onChange={handleChange}
+                value={newComment}
                 maxLength="255"
                 name="postContent"
                 type="text"
@@ -50,4 +75,4 @@ const NewComment = () => {
     </div>
   )
 }
-export default NewComment
+export default connect(mapStateToProps, null)(NewComment)
