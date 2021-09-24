@@ -35,7 +35,7 @@ const Feed = (props) => {
     async function getPosts() {
       const res = await Client.get('/posts')
       const sorted = res.data.sort((a, b) => b.id - a.id)
-      console.log(res.data)
+      console.log(sorted)
       managePosts(sorted)
     }
     getPosts()

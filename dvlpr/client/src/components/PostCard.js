@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import NewComment from './NewComment'
 import Comments from './Comments'
 import { connect } from 'react-redux'
@@ -16,6 +16,7 @@ const mapStateToProps = (state) => {
 const PostCard = (props) => {
   const [edit, toggleEdit] = useState(false)
   const [postContent, setPostContent] = useState(props.content)
+  const [postComments, setPostComments] = useState(props.comments)
   const [deleteCheck, toggleDeleteCheck] = useState(false)
 
   const handleChange = (e) => {
@@ -32,7 +33,6 @@ const PostCard = (props) => {
 
   const handleDelete = async (e) => {
     const res = await Client.delete(`/posts/${props.id}`)
-    console.log(res)
     props.toggleupdate(() => {
       return props.update ? false : true
     })
@@ -40,16 +40,15 @@ const PostCard = (props) => {
 
   return (
     <div class="text-left">
-      {/* edit post */}
       {edit ? (
         <div>
           <form onSubmit={handleSubmit}>
             <input
               maxLength="255"
-              name="postContent"
-              placeholder="edit your post here"
+              name="commentContent"
+              placeholder="edit your Post here"
               type="text"
-              values={postContent}
+              value={postContent}
               onChange={handleChange}
               class="
               text-white
@@ -60,7 +59,6 @@ const PostCard = (props) => {
                 text-purple-300
                 "
             />
-            {/* save edit button */}
             {props.userState.user.id === props.userId ? (
               <button
                 class="  
@@ -163,7 +161,6 @@ const PostCard = (props) => {
         </div>
       )}
       <div class="py-2 italic content-center">
-        {/* timestamp */}
         @
         <Moment
           date={props.timeStamp}
@@ -174,16 +171,27 @@ const PostCard = (props) => {
       </div>
       <div>
         <div>
-          {props.comments.map((comment) => (
+          {postComments.map((comment) => (
             <Comments
               key={comment.id}
+              id={comment.id}
               comments={comment.commentContent}
               timeStamp={comment.createdAt}
               user={comment.commentsAndUsers.userName}
+              userId={comment.commentsAndUsers.id}
+              toggleupdate={props.toggleupdate}
+              update={props.update}
             />
           ))}
-          <div className="bg-gray-900 shadow-2xl">
-            <NewComment />
+          <div className="bg-gray-900 shadow-2xl mt-14">
+            <NewComment
+              comments={postComments}
+              addNewComment={setPostComments}
+              postId={props.id}
+              userId={props.userState.user.id}
+              toggleupdate={props.toggleupdate}
+              update={props.update}
+            />
           </div>
         </div>
       </div>
