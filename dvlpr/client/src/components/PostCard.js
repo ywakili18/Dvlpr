@@ -34,19 +34,53 @@ const PostCard = (props) => {
   }
 
   return (
-    <div>
+    <div class="text-sm">
       {edit ? (
         <div>
-          <form onSubmit={handleSubmit}>
+          <form class="flex items-center sm:mx-auto" onSubmit={handleSubmit}>
             <textarea
               maxLength="255"
               name="postContent"
+              placeholder="edit your post here"
               type="text"
               value={postContent}
               onChange={handleChange}
+              class="
+              w-1/2
+              text-gray-900
+                sm:px-2
+                sm:py-2
+                sm:mx-auto
+                sm:mr-4
+                focus:outline-none 
+                border 
+                border-t-0
+                border-l-0
+                border-r-0
+                border-b-2
+                rounded-lg   
+                border-purple-500  
+                bg-white 
+                text-center
+                
+                "
             />
             {props.userState.user.id === props.userId ? (
-              <button type="submit">Save Edit</button>
+              <button
+                class="h-8
+                  px-4 
+                  text-indigo-100 
+                  transition-colors 
+                  duration-150 
+                  bg-gray-400 rounded-lg 
+                  focus:shadow-outline 
+                  hover:bg-purple-800 
+                  transition duration-500
+                  sm:mr-20"
+                type="submit"
+              >
+                Save edit
+              </button>
             ) : (
               <div></div>
             )}
@@ -54,10 +88,38 @@ const PostCard = (props) => {
         </div>
       ) : (
         <div>
-          <div>{postContent}</div>
+          <div
+            class=" w-1/2
+                text-gray-900
+                sm:px-2
+                sm:py-2
+                sm:mx-auto
+                focus:outline-none 
+                border 
+                border-t-2
+                border-l-2
+                border-r-2
+                border-b-2
+                rounded-lg   
+                bg-gray-400 
+                italic
+                text-center"
+          >
+            {postContent}
+          </div>
           {props.userState.user.id === props.userId ? (
             <div>
               <button
+                class="h-8
+              px-4 
+              text-indigo-100 
+              transition-colors 
+              duration-150 
+              bg-gray-400 rounded-lg 
+              focus:shadow-outline 
+              hover:bg-purple-800 
+              transition duration-500
+              sm:mr-20"
                 onClick={() => {
                   toggleEdit(true)
                 }}
@@ -74,6 +136,16 @@ const PostCard = (props) => {
               ) : (
                 <button
                   type="button"
+                  class="h-8
+                  px-4 
+                  text-indigo-100 
+                  transition-colors 
+                  duration-150 
+                  bg-gray-400 rounded-lg 
+                  focus:shadow-outline 
+                  hover:bg-purple-800 
+                  transition duration-500
+                  "
                   onClick={() => {
                     toggleDeleteCheck(true)
                   }}
