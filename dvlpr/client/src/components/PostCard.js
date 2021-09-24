@@ -199,8 +199,15 @@ const PostCard = (props) => {
           )}
         </div>
       )}
-      <div>
-        <Moment date={props.timeStamp} />
+      <div class="py-2 italic content-center">
+        {/* timestamp */}
+        <p className="text-sm text-center">Created At</p>
+        <Moment
+          date={props.timeStamp}
+          format="MM-DD-YYYY hh:mm:ss"
+          className="text-sm"
+          tz="America/Los_Angeles"
+        />
       </div>
       <div>
         <div>
