@@ -16,4 +16,5 @@ input:-webkit-autofill::first-line {
 }
 textarea {
   resize: none;
+  overflow: hidden;
 }

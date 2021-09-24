@@ -27,7 +27,7 @@ const Posts = (data) => {
               border-purple-400 
               rounded-2xl 
               sm:py-10
-              bg-gray-100
+              bg-purple-200
               text-purple-500 "
             >
               <PostCard
