@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Comments from './Comments'
 import NewComment from './NewComment'
 import { connect } from 'react-redux'
@@ -27,6 +27,12 @@ const PostCard = (props) => {
     toggleEdit(false)
   }
 
+  const handleDelete = async (e) => {
+    const res = await Client.delete(`/posts/${props.id}`)
+    console.log(res)
+    window.location.reload()
+  }
+
   return (
     <div>
       {edit ? (
@@ -50,13 +56,32 @@ const PostCard = (props) => {
         <div>
           <div>{postContent}</div>
           {props.userState.user.id === props.userId ? (
-            <button
-              onClick={() => {
-                toggleEdit(true)
-              }}
-            >
-              Edit
-            </button>
+            <div>
+              <button
+                onClick={() => {
+                  toggleEdit(true)
+                }}
+              >
+                Edit
+              </button>
+              {deleteCheck ? (
+                <div>
+                  <div>Are You Sure?</div>
+                  <button type="button" onClick={handleDelete}>
+                    DELETE
+                  </button>
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => {
+                    toggleDeleteCheck(true)
+                  }}
+                >
+                  Delete Post
+                </button>
+              )}
+            </div>
           ) : (
             <div></div>
           )}
