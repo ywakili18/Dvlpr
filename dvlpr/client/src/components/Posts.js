@@ -4,11 +4,22 @@ import PostCard from './PostCard'
 
 const Posts = (data) => {
   const [posts, managePosts] = useState([])
+  const [time, manageTime] = useState([])
   // fetch all posts
   useEffect(() => {
     async function getPosts() {
       const res = await Client.get('/posts', data)
       const sorted = res.data.sort((a, b) => b.id - a.id)
+      console.log(res.data)
+      managePosts(sorted)
+    }
+    getPosts()
+  }, [])
+  useEffect(() => {
+    async function getPosts() {
+      const res = await Client.get('/posts', data)
+      const sorted = res.data.sort((a, b) => b.id - a.id)
+      console.log(res.data)
       managePosts(sorted)
     }
     getPosts()
@@ -19,17 +30,7 @@ const Posts = (data) => {
       <div class="mt-10 shadow rounded-lg md:w-full ">
         <div>
           {posts.map((post) => (
-            <div
-              class="
-              mt-20 
-              border-solid 
-              border-4 
-              border-purple-400 
-              rounded-2xl 
-              sm:py-10
-              bg-purple-200
-              text-purple-500 "
-            >
+            <div>
               <PostCard
                 userId={post.userId}
                 key={post.id}

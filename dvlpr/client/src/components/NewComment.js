@@ -15,10 +15,8 @@ const NewComment = () => {
                 class="
                 w-1/2
                 text-gray-900
-                sm:px-2
-                sm:py-2
-                sm:mr-4
-                sm:ml-24
+                sm:mr-2
+                sm:ml-28
                 focus:outline-none 
                 border 
                 border-t-2

@@ -3,7 +3,8 @@ import Comments from './Comments'
 import NewComment from './NewComment'
 import { connect } from 'react-redux'
 import Client from '../services/api'
-
+import Moment from 'react-moment'
+import 'moment-timezone'
 const mapStateToProps = (state) => {
   return {
     userState: state.userState
@@ -34,16 +35,30 @@ const PostCard = (props) => {
   }
 
   return (
-    <div class="text-sm">
+    <div
+      // feed container
+      class="
+      mt-20 
+      border-purple-400 
+      rounded-2xl 
+      sm:py-10
+      bg-purple-200
+      text-purple-500
+      text-sm "
+    >
+      {/* edit post */}
       {edit ? (
         <div>
-          <form class="flex items-center sm:mx-auto" onSubmit={handleSubmit}>
+          <form
+            class="mt-10 flex items-center sm:mx-auto border"
+            onSubmit={handleSubmit}
+          >
             <textarea
               maxLength="255"
               name="postContent"
               placeholder="edit your post here"
               type="text"
-              value={postContent}
+              values={postContent}
               onChange={handleChange}
               class="
               w-1/2
@@ -62,9 +77,9 @@ const PostCard = (props) => {
                 border-purple-500  
                 bg-white 
                 text-center
-                
                 "
             />
+            {/* save edit button */}
             {props.userState.user.id === props.userId ? (
               <button
                 class="h-8
@@ -87,10 +102,11 @@ const PostCard = (props) => {
           </form>
         </div>
       ) : (
+        // delete button
         <div>
           <div
             class=" w-1/2
-                text-gray-900
+                text-purple-100
                 sm:px-2
                 sm:py-2
                 sm:mx-auto
@@ -103,34 +119,58 @@ const PostCard = (props) => {
                 rounded-lg   
                 bg-gray-400 
                 italic
-                text-center"
+                text-center
+                "
           >
             {postContent}
           </div>
           {props.userState.user.id === props.userId ? (
             <div>
               <button
-                class="h-8
-              px-4 
-              text-indigo-100 
-              transition-colors 
-              duration-150 
-              bg-gray-400 rounded-lg 
-              focus:shadow-outline 
-              hover:bg-purple-800 
-              transition duration-500
-              sm:mr-20"
+                class="
+                h-8
+                px-6
+                mt-2
+                text-indigo-100 
+                transition-colors 
+                duration-150 
+                bg-gray-400 rounded-lg 
+                focus:shadow-outline 
+                hover:bg-purple-800 
+                transition duration-500
+                sm:mx-auto"
                 onClick={() => {
                   toggleEdit(true)
                 }}
               >
-                Edit
+                Edit Post
               </button>
               {deleteCheck ? (
                 <div>
-                  <div>Are You Sure?</div>
-                  <button type="button" onClick={handleDelete}>
-                    DELETE
+                  <div
+                    class="
+                  text-black italic font-bold
+                  sm:px-2
+                  sm:py-4
+                  sm:mx-auto
+                  text-center"
+                  ></div>
+                  <button
+                    class="
+                    h-8
+                    px-4 
+                    text-indigo-100 
+                    transition-colors 
+                    duration-150 
+                    bg-gray-400 rounded-lg 
+                    focus:shadow-outline 
+                    hover:bg-purple-800 
+                    transition duration-500
+                    sm:mx-auto"
+                    type="button"
+                    onClick={handleDelete}
+                  >
+                    Confirm to delete
                   </button>
                 </div>
               ) : (
@@ -159,7 +199,9 @@ const PostCard = (props) => {
           )}
         </div>
       )}
-      <div>timestamp {props.timeStamp}</div>
+      <div>
+        <Moment date={props.timeStamp} />
+      </div>
       <div>
         <div>
           {props.comments.map((comment) => (
