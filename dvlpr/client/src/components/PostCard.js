@@ -39,7 +39,7 @@ const PostCard = (props) => {
   }
 
   return (
-    <div class="text-left">
+    <div class="text-center">
       {edit ? (
         <div>
           <form onSubmit={handleSubmit}>
@@ -82,8 +82,8 @@ const PostCard = (props) => {
           </form>
         </div>
       ) : (
-        <div>
-          <div class="text-indigo-300 italic">{postContent}</div>
+        <div class="border rounded-xl bg-gray-700">
+          <div class="text-indigo-300 italic text-sm">{postContent}</div>
           {props.userState.user.id === props.userId ? (
             <div>
               <button
@@ -158,17 +158,17 @@ const PostCard = (props) => {
           ) : (
             <div></div>
           )}
+          <div class="py-2 italic content-center text-xs">
+            Post Created @
+            <Moment
+              date={props.timeStamp}
+              format="MM-DD-YYYY hh:mm:ss"
+              tz="America/Los_Angeles"
+            />
+          </div>
         </div>
       )}
-      <div class="py-2 italic content-center">
-        @
-        <Moment
-          date={props.timeStamp}
-          format="MM-DD-YYYY hh:mm:ss"
-          className="text-sm"
-          tz="America/Los_Angeles"
-        />
-      </div>
+
       <div>
         <div>
           {postComments.map((comment) => (
