@@ -1,7 +1,8 @@
 const RegisterMessage = () => {
   return (
     <div>
-      <h1 class="text-purple-600 text-white text-4xl font-bold py-5 font-brand sm:mx-auto">
+      {/* <img class="galaxy" src="https://bit.ly/3lUXD1y" /> */}
+      <h1 class=" text-purple-600 text-white text-4xl font-bold py-5 font-brand sm:mx-auto">
         Becoming a Dvlpr has never been easier.
       </h1>
       <p class="text-purple-300 text-l font-bold font-brand sm:mx-auto">
