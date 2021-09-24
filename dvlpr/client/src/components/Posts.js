@@ -15,15 +15,6 @@ const Posts = (data) => {
     }
     getPosts()
   }, [])
-  useEffect(() => {
-    async function getPosts() {
-      const res = await Client.get('/posts', data)
-      const sorted = res.data.sort((a, b) => b.id - a.id)
-      console.log(res.data)
-      managePosts(sorted)
-    }
-    getPosts()
-  }, [])
 
   return (
     <div class="sm:mx-auto text-center sm:w-1/2 ">

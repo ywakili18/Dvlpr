@@ -102,7 +102,6 @@ const PostCard = (props) => {
           </form>
         </div>
       ) : (
-        // delete button
         <div>
           <div
             class=" w-1/2
@@ -220,6 +219,7 @@ const PostCard = (props) => {
             />
           ))}
         </div>
+        <div></div>
         <NewComment />
       </div>
     </div>

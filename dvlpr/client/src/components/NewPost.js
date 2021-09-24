@@ -1,3 +1,4 @@
+import { BiCommentAdd } from 'react-icons/bi'
 const NewPost = (props) => {
   return (
     <div
@@ -9,44 +10,36 @@ const NewPost = (props) => {
     >
       <div
         class="
-      md:w-2/5
-      sm:1/2
-      rounded-2xl 
-      text-sm
+      text-md
       sm:mx-auto 
       sm:py-4
-      bg-purple-200
+      bg-gray-600
+      justify-between w-screen items-center
       "
       >
-        <form onSubmit={props.onSubmit} class="flex items-center sm:mx-auto">
-          <textarea
+        <form onSubmit={props.onSubmit}>
+          <input
             name="postContent"
             type="text"
             placeholder="Write a post"
             onChange={props.onChange}
             value={props.value}
             class="
-                text-gray-900
-                sm:px-14
-                sm:py-4
+                text-white
                 sm:mx-auto
-                sm:mr-16
                 focus:outline-none 
-                border 
-                border-t-0
-                border-l-0
-                border-r-0
-                border-b-2
-                border-purple-500  
                 bg-transparent 
                 text-center
+                text-purple-300
+                flex-grow h-16
                 "
           />
           <button
             type="submit"
             class="
               h-8
-              px-4 
+              p-2
+              px-8   
               text-indigo-100 
               transition-colors 
               duration-150 
@@ -54,10 +47,10 @@ const NewPost = (props) => {
               focus:shadow-outline 
               hover:bg-purple-800 
               transition duration-500
-              sm:mr-20
+              
               "
           >
-            +
+            <BiCommentAdd />
           </button>
         </form>
       </div>
