@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import Posts from '../components/Posts'
 import NewPost from '../components/NewPost'
 import {
@@ -7,6 +8,7 @@ import {
 } from '../store/actions/PostActions'
 import { User, authenticateUser } from '../store/actions/UserActions'
 import { connect } from 'react-redux'
+import Client from '../services/api'
 
 const mapStateToProps = (state) => {
   return {
@@ -26,13 +28,32 @@ const mapActionsToProps = (dispatch) => {
 }
 
 const Feed = (props) => {
+  const [posts, managePosts] = useState([])
+  const [update, toggleupdate] = useState(false)
+
+  useEffect(() => {
+    async function getPosts() {
+      const res = await Client.get('/posts')
+      const sorted = res.data.sort((a, b) => b.id - a.id)
+      console.log(res.data)
+      managePosts(sorted)
+    }
+    getPosts()
+  }, [update])
+
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (props.postState.newPost.postContent === '') {
+      return
+    }
     await props.createPost({
       userId: props.userState.user.id,
       postContent: props.postState.newPost.postContent
     })
     props.newPostState({ postContent: '' })
+    toggleupdate(() => {
+      return update ? false : true
+    })
   }
 
   const handleChange = (e) => {
@@ -52,7 +73,12 @@ const Feed = (props) => {
       <div className="border-4  mt-20 border-indigo-700 ">
         <div className="bg-gray-900 shadow-2xl">
           <div classname="">
-            <Posts />
+            <Posts
+              posts={posts}
+              managePosts={managePosts}
+              toggleupdate={toggleupdate}
+              update={update}
+            />
           </div>
         </div>
       </div>
