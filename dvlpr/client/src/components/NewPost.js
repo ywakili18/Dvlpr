@@ -5,18 +5,17 @@ const NewPost = (props) => {
     sm:mt-20 
     sm:mx-auto 
     text-center
-    
     "
     >
       <div
         class="
-      sm:w-2/5
+      md:w-2/5
+      sm:1/2
       rounded-2xl 
       text-sm
       sm:mx-auto 
       sm:py-4
-      border-purple-400
-      bg-gray-100
+      bg-purple-200
       "
       >
         <form onSubmit={props.onSubmit} class="flex items-center sm:mx-auto">
@@ -32,7 +31,7 @@ const NewPost = (props) => {
                 sm:px-2
                 sm:py-2
                 sm:mx-auto
-                sm:mr-4
+                sm:mr-16
                 focus:outline-none 
                 border 
                 border-t-0
@@ -40,7 +39,6 @@ const NewPost = (props) => {
                 border-r-0
                 border-b-2
                 border-purple-500  
-                b
                 bg-transparent 
                 text-center
                 "
@@ -53,9 +51,9 @@ const NewPost = (props) => {
               text-indigo-100 
               transition-colors 
               duration-150 
-              bg-gray-500 rounded-lg 
+              bg-gray-400 rounded-lg 
               focus:shadow-outline 
-              hover:bg-indigo-800 
+              hover:bg-purple-800 
               transition duration-500
               sm:mr-20
               "
