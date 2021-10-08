@@ -1,23 +1,20 @@
 # DVLPR
-
-#### Date: 09/23/2021
-
 ---
 
 ## **Contributors**
 
 
 ### Yousof Wakili
-
-[**GitHub**](https://github.com/ywakili18) **|** [**LinkedIn**](https://www.linkedin.com/in/yw1818/)
+##### Role: Back-End Engineer, Git Project Manager, Designer
+[**GitHub**](https://github.com/ywakili18) **|** [**LinkedIn**](https://www.linkedin.com/in/youseffect/) **|** [**Website**](https://youseffect.com/)
 
 
 ### Tanner Mitchell
-
+##### Role: Front-End Engineer, Middleware Specialist
 [**GitHub**](https://github.com/BtSquared) **|** [**LinkedIn**](https://www.linkedin.com/in/tanner-mitchell/)
 
 ### Reinel Parrado
-
+##### Role: Back-End Engineer and Middleware Specialist
 [**GitHub**](https://github.com/UnitarySaucer) **|** [**LinkedIn**](https://www.linkedin.com/in/reinel-parrado/)
 
 ---
@@ -28,11 +25,19 @@ DVLPR is a social platform for all software developers to come together and netw
 
 ### **_Planning process_**
 
+### Entity Relationship Diagram (ERD) used for Backend Design Architecture
+
+---
+![ERD](https://i.ibb.co/Nrqyr2m/Screen-Shot-2021-10-07-at-10-25-13-PM.png)
+ 
+![Front-end folder stucture](https://i.ibb.co/Ykf3rtq/Screen-Shot-2021-10-07-at-10-25-21-PM.png)
+---
+
 #### [Trello for daily planning](https://trello.com/b/IrpuHFtR/dvlpr)
 
 ---
 
-## **Tech used**
+#### **Tech stack used**
 
 - **PERN** stack:
   - PostgresSQL
@@ -44,16 +49,19 @@ DVLPR is a social platform for all software developers to come together and netw
 ---
 
 ## **Getting Started**
+- Clone
+- `npm install or npm i`
+- `npm run start`
 
-The user will be presented with a Log In page at first and if they do not already have a website, they will be able to register at the top right of the page. After logging in, the user will be able to create posts and comment on already made posts.
+The user will be presented with a Log In page at first and if they do not already have a website, they will be able to register at the top right of the page. After logging in, the user will be able to create posts and comment on already made posts. 
 
 ---
 
-## **Mock up**
+## **Screenshots**
 
-![SignIn mock up](/readMeImg/signIn.png)
+![SignIn mock up](https://i.ibb.co/NVbLFgG/Screen-Shot-2021-10-07-at-10-22-12-PM.png)
 
-![Feed mock up](/readMeImg/feed.png)
+![Feed mock up](https://i.ibb.co/WpGPtQx/Screen-Shot-2021-10-07-at-10-22-48-PM.png)
 
 ---
 
